@@ -1,8 +1,8 @@
 {
-  "name": "monkey",
+  "name": "nuke",
   "version": "0.0.1",
   "description": "A repository for React Components, can be used by React JS and React Native",
-  "main": "gulpfile.js",
+  "main": "nuke.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp",

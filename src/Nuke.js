@@ -1,7 +1,7 @@
-var Monkey = {
+var Nuke = {
     Picker: require('./Picker/Picker.js'),
     View: require('./View.js')
 
 };
 
-module.exports = Monkey;
+module.exports = Nuke;
