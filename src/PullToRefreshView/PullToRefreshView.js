@@ -1,15 +1,8 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
+import Styles from './Style';
 var NATIVE_REF = 'swiperefreshlayout';
-var styles = {
-    'width': '100%',
-    'height': '6rem',
-    'lineHeight': '6rem',
-    'textAlign': 'center',
-    'fontSize': '1.6rem',
-    'display': 'block'
-};
 
 var eventDom = window
 
@@ -78,7 +71,7 @@ class PullToRefreshView extends Component {
         let { enabled } = this.props;
 
         return enabled ? 
-            <a style={styles}>加载中...</a> : <a style={styles}>不好意思，已经没有了...</a>
+            <a style={Styles.loading}>加载中...</a> : <a style={Styles.loading}>不好意思，已经没有了...</a>
     }
 
     componentDidUpdate() {
