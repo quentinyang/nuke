@@ -4,6 +4,7 @@ var Nuke = {
     View: require('./View'),
     Text: require('./Text'),
     TextInput: require('./TextInput.js'),
+    Image: require('./Image.js'),
     Navbar: require('./Navigator/Navbar'),
     Navigator: require('./Navigator/Navigator'),
 };
