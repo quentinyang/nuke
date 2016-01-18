@@ -7,9 +7,9 @@ let View = React.createClass({
     },
     render() {
         let style = this.props.style;
-        
+
         return (
-            <div style={style}>
+            <div style={style} onClick={this.props.onClick}>
                 {this.props.children}
             </div>
         )

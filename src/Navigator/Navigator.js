@@ -104,26 +104,26 @@ const Navigator = React.createClass({
     //TODO::update
   },
 
-// <Navigator
-//     initialRoute={{name: 'My First Scene', index: 0}}
-//     renderScene={(route, navigator) =>
-//       <MySceneComponent
-//         name={route.name}
-//         onForward={() => {
-//           var nextIndex = route.index + 1;
-//           navigator.push({
-//             name: 'Scene ' + nextIndex,
-//             index: nextIndex,
-//           });
-//         }}
-//         onBack={() => {
-//           if (route.index > 0) {
-//             navigator.pop();
-//           }
-//         }}
-//       />
-//     }
-//   />
+  // <Navigator
+  //     initialRoute={{name: 'My First Scene', index: 0}}
+  //     renderScene={(route, navigator) =>
+  //       <MySceneComponent
+  //         name={route.name}
+  //         onForward={() => {
+  //           var nextIndex = route.index + 1;
+  //           navigator.push({
+  //             name: 'Scene ' + nextIndex,
+  //             index: nextIndex,
+  //           });
+  //         }}
+  //         onBack={() => {
+  //           if (route.index > 0) {
+  //             navigator.pop();
+  //           }
+  //         }}
+  //       />
+  //     }
+  //   />
 
   _renderScene(route = {}, i) {
     var scene = this.props.renderScene(route, this)
@@ -145,7 +145,7 @@ const Navigator = React.createClass({
 
   render() {
     let scenes = this.state.routeStack.map((route, index) => {
-      console.log(route)
+      // console.log(route)
       return this._renderScene(route, index);
     });
     return (
