@@ -31,9 +31,13 @@ Write once use anywhere!
 
 1. PullToRefreshView(PullToRefreshViewAndroid)
 
+1. Navbar
+
 1. <del>ProgressBar(ProgressBarAndroid/ProgressBarIOS)</del>
 
 1. <del>Navigation (Navigator/ViewPagerAndroid)</del>
+
+
 
 
 
