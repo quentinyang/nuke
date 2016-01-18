@@ -7,6 +7,7 @@ var Nuke = {
     Image: require('./Image.js'),
     Navbar: require('./Navigator/Navbar'),
     Navigator: require('./Navigator/Navigator'),
+    Modal: require('./Modal/Modal')
 };
 
 module.exports = Nuke;
