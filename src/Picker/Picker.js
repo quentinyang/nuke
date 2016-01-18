@@ -169,6 +169,9 @@ const Picker = React.createClass({
 
     console.log('selected: ', offset - index, this.data.selected);
 
+    // execute change handler (callback)
+    this.changeHandler(this.data.selected);
+
     return index;
   },
 
@@ -190,13 +193,16 @@ const Picker = React.createClass({
         item = refs['item' + index];
         text = refs['text' + index];
 
+        item.style.WebkitTransform = 'translate3D(0, ' + move + ', 0)';
         item.style.transform = 'translate3D(0, ' + move + ', 0)';
         item.style.border = 'none';
 
+        text.style.WebkitTransform = 'scale(1, 1)';
         text.style.transform = 'scale(1, 1)';
         text.style.color = '#ccc';
         if (index == selectedIndex) {
           text.style.color = '#000';
+          text.style.WebkitTransform = 'scale(1.5, 1.5)';
           text.style.transform = 'scale(1.5, 1.5)';
           // $(item).css('border-top', '0.1rem solid #ccc');
           // $(item).css('border-bottom', '0.1rem solid #ccc');
@@ -224,9 +230,6 @@ const Picker = React.createClass({
     console.log('real move', (this.data.touch.end.y - this.data.touch.start.y), 
                 'Move buffer: ', moveDistance, 
                 'Current selected', this.data.selected);
-
-    // execute change handler (callback)
-    this.changeHandler(this.data.selected);
 
     if (Math.abs(moveDistance) > this.data.config.perHeight) {
       this.data.touch.start.y = touches[0].pageY;
@@ -259,7 +262,12 @@ const Picker = React.createClass({
       // console.log('name', name, 'value', value, 'Index:', key);
       return (
           <li key={key} style={Styles.item} ref={'item' + key}>
-            <span ref={'text' + key} style={{display: 'block', transition: '0.5s ease', transitionDelay: '0.1s'}} 
+            <span ref={'text' + key} 
+                style={{
+                        display: 'block', 
+                        transition: '0.5s ease', WebkitTransition: '0.5s ease', 
+                        transitionDelay: '0.1s', WebkitTransitionDelay: '0.1s'
+                    }} 
                 customize-data={value}>{name}</span>
           </li>
       );
