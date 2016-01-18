@@ -5,6 +5,7 @@ var Nuke = {
     Text: require('./Text'),
     TextInput: require('./TextInput.js'),
     Image: require('./Image.js'),
+    Switch: require('./Switch.js'),
     Navbar: require('./Navigator/Navbar'),
     Navigator: require('./Navigator/Navigator'),
     Modal: require('./Modal/Modal'),
