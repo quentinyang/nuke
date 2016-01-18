@@ -12,8 +12,7 @@ function PullToRefresh(React) {
                         return;
                     }
                     if (options.eventDom == window) {
-                        // height = 0 + $(document).height() - $this.scrollTop() - $(window).height();
-                        height = 100
+                        height = 0 + document.documentElement.offsetHeight - $this.scrollTop() - window.innerHeight;
                     } else {
                         height = 0 + $this.attr('scrollHeight') - $this.attr('scrollTop') - $this.attr('clientHeight');
                     }
@@ -37,7 +36,7 @@ function PullToRefresh(React) {
             },
 
             setLoadingDom() {
-                let enabled = options.enabled.bind(self)()
+                let enabled = options.enabled.bind(this)()
                 return enabled ? 
                     <a style={this._reference.styles}>不好意思，已经没有了...</a> : <a style={this._reference.styles}>加载中...</a>
             },
