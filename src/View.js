@@ -6,8 +6,10 @@ let View = React.createClass({
         style: PropTypes.object
     },
     render() {
+        let style = this.props.style;
+        
         return (
-            <div>
+            <div style={style}>
                 {this.props.children}
             </div>
         )

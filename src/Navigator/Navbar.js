@@ -1,5 +1,6 @@
 const React = require('react');
 import View from '../View.js';
+import Styles from './Style';
 
 const Navbar = React.createClass({
 
@@ -18,10 +19,12 @@ const Navbar = React.createClass({
   },
 
   render() {
+    let text = this.props.text;
+
     return (
 
-        <View>
-
+        <View style={Styles.container}>
+            {text}
         </View>
 
     );

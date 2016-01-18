@@ -1,10 +1,10 @@
 var Nuke = {
-    Styles: require('./Styles.js'),
-    Picker: require('./Picker/Picker.js'),
-    View: require('./View.js'),
-    Text: require('./Text.js'),
+    Styles: require('./Styles'),
+    Picker: require('./Picker/Picker'),
+    View: require('./View'),
+    Text: require('./Text'),
     Navbar: require('./Navigator/Navbar'),
-    // Navigator: require('./Navigator/Navigator'),
+    Navigator: require('./Navigator/Navigator'),
 
 };
 
