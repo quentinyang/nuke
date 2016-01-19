@@ -1,6 +1,8 @@
 'use strict';
 
 import React, { PropTypes } from 'react';
+import Styles from './Style';
+import View from '../View';
 
 var ListView = React.createClass({
 
@@ -15,9 +17,12 @@ var ListView = React.createClass({
             return renderRow(item, index);
         });
 
+
         return (
-            <div>
+            <div style={{...Styles.list}}>
+                <div style={{...Styles.borderTop}}></div>
                 {list}
+                <div style={{...Styles.borderTop, ...Styles.borderBottom}}></div>
             </div>
         )
     }
