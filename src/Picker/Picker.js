@@ -358,8 +358,8 @@ const Picker = React.createClass({
   open() {
     this.closed = false;
     var picker = ReactDOM.findDOMNode(this.refs.picker);
-    picker.style.WebkitTransform = 'translate3d(0,' + ((this.screenHeight - 95)/10) + 'rem,0)';
-    picker.style.transform = 'translate3d(0,' + ((this.screenHeight - 95)/10) + 'rem,0)';
+    picker.style.WebkitTransform = 'translate3d(0,' + (this.screenHeight/10 - 7.8) + 'rem,0)';
+    picker.style.transform = 'translate3d(0,' + (this.screenHeight/10 - 7.8) + 'rem,0)';
 
     var overlay = ReactDOM.findDOMNode(this.refs.overlay);
     overlay.style.display = 'block';
@@ -368,8 +368,8 @@ const Picker = React.createClass({
   close() {
     this.closed = true;
     var picker = ReactDOM.findDOMNode(this.refs.picker);
-    picker.style.WebkitTransform = 'translate3d(0,' + ((this.screenHeight + 190)/10) + 'rem,0)';
-    picker.style.transform = 'translate3d(0,' + ((this.screenHeight + 190)/10) + 'rem,0)';
+    picker.style.WebkitTransform = 'translate3d(0,' + (this.screenHeight /10 + 16.8) + 'rem,0)';
+    picker.style.transform = 'translate3d(0,' + (this.screenHeight /10 + 16.8) + 'rem,0)';
 
     var overlay = ReactDOM.findDOMNode(this.refs.overlay);
     overlay.style.display = 'none';
@@ -382,8 +382,8 @@ const Picker = React.createClass({
     pickerStyles.transitionDuration = '1s';
     pickerStyles.position = 'relative';
     pickerStyles.zIndex = 99;
-    pickerStyles.WebkitTransform = 'translate3d(0,' + ((this.screenHeight + 190)/10) + 'rem,0)';
-    pickerStyles.transform = 'translate3d(0,' + ((this.screenHeight + 190)/10) + 'rem,0)';
+    pickerStyles.WebkitTransform = 'translate3d(0,' + (this.screenHeight/10 + 16.8) + 'rem,0)';
+    pickerStyles.transform = 'translate3d(0,' + (this.screenHeight/10 + 16.8) + 'rem,0)';
 
     var {...overlayStyles} = Styles.overlay;
     overlayStyles.display = 'none';
@@ -398,7 +398,7 @@ const Picker = React.createClass({
 
     return (
         <View {...others}>
-            <Text ref="text" style={Styles.text} onClick={this.open} onPress={this.open}>{this.props.placeHolder}</Text>
+            <Text ref="text" style={Styles.text} onClick={this.open} onPress={this.open}>{this.props.placeholder}</Text>
 
             <View style={containerStyles}>
                 <View ref='overlay' style={overlayStyles}
