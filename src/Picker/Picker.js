@@ -96,7 +96,7 @@ const PickerCore = React.createClass({
 
     for (var i = 0; i < Math.abs(vector); i++) {
       if (vector > 0) {
-        this.goNext();        
+        this.goNext();
       } else {
         this.goPrevious();
       }
@@ -111,7 +111,7 @@ const PickerCore = React.createClass({
 
     // for (var i = 0; i < Math.abs(text); i++) {
     //   if (text > 0) {
-    //     self.goNext();        
+    //     self.goNext();
     //   } else {
     //     self.goPrevious();
     //   }
@@ -242,7 +242,7 @@ const PickerCore = React.createClass({
 
   onCancelEvent(e) {
     e.preventDefault();
-    e.stopPropagation();    
+    e.stopPropagation();  
   },
 
   render() {
@@ -320,7 +320,7 @@ const Picker = React.createClass({
 
   onCancelEvent(e) {
     e.preventDefault();
-    e.stopPropagation();    
+    e.stopPropagation();  
   },
 
   clickHandler(key, e) {
@@ -358,8 +358,8 @@ const Picker = React.createClass({
   open() {
     this.closed = false;
     var picker = ReactDOM.findDOMNode(this.refs.picker);
-    picker.style.WebkitTransform = 'translate3d(0,' + (this.screenHeight/10 - 7.8) + 'rem,0)';
-    picker.style.transform = 'translate3d(0,' + (this.screenHeight/10 - 7.8) + 'rem,0)';
+    picker.style.display = 'block';
+    setTimeout(()=>{this._transformUpStyle(picker.style);}, 1);
 
     var overlay = ReactDOM.findDOMNode(this.refs.overlay);
     overlay.style.display = 'block';
@@ -368,23 +368,27 @@ const Picker = React.createClass({
   close() {
     this.closed = true;
     var picker = ReactDOM.findDOMNode(this.refs.picker);
-    picker.style.WebkitTransform = 'translate3d(0,' + (this.screenHeight /10 + 16.8) + 'rem,0)';
-    picker.style.transform = 'translate3d(0,' + (this.screenHeight /10 + 16.8) + 'rem,0)';
+    setTimeout(() => {picker.style.display = 'none';}, 500);
+    this._transformDownStyle(picker.style);
 
     var overlay = ReactDOM.findDOMNode(this.refs.overlay);
-    overlay.style.display = 'none';
+    setTimeout(() => {overlay.style.display = 'none';}, 500);
   },
 
+  _transformUpStyle(styles) {
+    styles.WebkitTransform = 'translate3d(0,' + (this.screenHeight/10 - 7.8) + 'rem,0)';
+    styles.transform = 'translate3d(0,' + (this.screenHeight/10 - 7.8) + 'rem,0)';
+  },
+  _transformDownStyle(styles) {
+    styles.WebkitTransform = 'translate3d(0,' + (this.screenHeight /10 + 16.8) + 'rem,0)';
+    styles.transform = 'translate3d(0,' + (this.screenHeight /10 + 16.8) + 'rem,0)';
+  },
   render() {
     var {...containerStyles} = Styles.container;
-    // containerStyles.position = 'relative';
-    var {...pickerStyles} = Styles.container;
-    pickerStyles.transitionDuration = '1s';
-    pickerStyles.position = 'relative';
-    pickerStyles.zIndex = 99;
-    pickerStyles.WebkitTransform = 'translate3d(0,' + (this.screenHeight/10 + 16.8) + 'rem,0)';
-    pickerStyles.transform = 'translate3d(0,' + (this.screenHeight/10 + 16.8) + 'rem,0)';
 
+    var {...pickerStyles} = Styles.pickerContainer;
+    this._transformDownStyle(pickerStyles)
+    
     var {...overlayStyles} = Styles.overlay;
     overlayStyles.display = 'none';
 

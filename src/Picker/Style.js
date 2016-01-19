@@ -54,6 +54,12 @@ let style = {
         bottom: (listHeight - 0.1) + 'rem',
         borderBottom: '0.1rem solid #d9d9d9'
     },
+    pickerContainer: {
+        transitionDuration: '1s',
+        position: 'relative',
+        zIndex: 99,
+        display: 'none',    
+    },
     text: {
         height: '3.4rem',
         fontSize: '1.6rem',
@@ -72,7 +78,6 @@ let style = {
         height: buttonHeight + 'rem',
         lineHeight: buttonHeight + 'rem',
         borderRadius: 0,
-        
     }
 
 };
