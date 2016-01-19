@@ -6,10 +6,15 @@ let View = React.createClass({
         style: PropTypes.object
     },
     render() {
-        let style = this.props.style;
+        let {
+            ref,
+            style,
+            ...other,
+        } = this.props;
 
         return (
-            <div style={style} onClick={this.props.onClick}>
+            <div style={style}
+                {...other}>
                 {this.props.children}
             </div>
         )

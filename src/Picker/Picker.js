@@ -2,9 +2,10 @@ import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 
 import View from '../View';
+import Button from '../Button';
+import Text from '../Text';
 
 import Styles from './Style';
-
 
 // Debug tool:
 // <div ref="tool" style={{display: 'none'}}>
@@ -26,17 +27,15 @@ import Styles from './Style';
 //   <button className="next" onClick={self.goNext}>下一个</button>
 // </div>
 
-const Picker = React.createClass({
-    propTypes: {
-        label: PropTypes.string
-    },
+const PickerCore = React.createClass({
+  propTypes: {
+    label: PropTypes.string
+  },
+  getInitialState () {
+    return {
 
-    getInitialState () {
-        return {
-            selected: ''
-        };
-    },
-
+    };
+  },
 
   _px2rem(px) {
     return px / this.data.utils.px2remRate;
@@ -61,9 +60,7 @@ const Picker = React.createClass({
       start: {x: 0, y: 0},
       end: {x: 0, y: 0},
       move: 0
-    },    
-    
-
+    },
   },
 
   componentDidMount() {
@@ -71,7 +68,6 @@ const Picker = React.createClass({
     var data = this.data;
 
     this.init();
-
   },
 
   init() {
@@ -110,7 +106,6 @@ const Picker = React.createClass({
 
   /* test funciton */
   run() {
-    console.log('run');
     var self = this;
     var text = this.refs.text.value;
 
@@ -123,8 +118,6 @@ const Picker = React.createClass({
     // }
 
     this.setSelected(text);
-
-
   },
 
   
@@ -207,7 +200,6 @@ const Picker = React.createClass({
           // $(item).css('border-top', '0.1rem solid #ccc');
           // $(item).css('border-bottom', '0.1rem solid #ccc');
         }
-
     });
 
   },
@@ -239,11 +231,18 @@ const Picker = React.createClass({
         this.goNext();
       }
     }
-
+    this.onCancelEvent(e);
 
   },
   onTouchEnd(e) {
     // Do nothing here.
+  },
+
+
+
+  onCancelEvent(e) {
+    e.preventDefault();
+    e.stopPropagation();    
   },
 
   render() {
@@ -273,46 +272,23 @@ const Picker = React.createClass({
       );
     });
 
+    var { ...borderTopStyle } = Styles.border;
+    borderTopStyle.top = '5.5rem';
     
-    // TODO::Refine code
-    var borderStyle = Styles.border;
-    var borderTopStyle = {
-      position: borderStyle.position,
-      zIndex: borderStyle.zIndex, 
-      display: borderStyle.display, 
-      width: borderStyle.width,
-      height: borderStyle.height,
-      backgroundColor: borderStyle.backgroundColor,
-      top: '5.5rem',//4.5
-      margin: 0,
-      padding: 0,
-    }
-    var borderBottomStyle = {
-      position: borderStyle.position,
-      zIndex: borderStyle.zIndex, 
-      display: borderStyle.display, 
-      width: borderStyle.width,
-      height: borderStyle.height,
-      backgroundColor: borderStyle.backgroundColor,
-      top: '9.5rem',//8
-      margin: 0,
-      padding: 0,
-    };
+    var { ...borderBottomStyle } = Styles.border;
+    borderBottomStyle.top = '9.5rem';
 
     return (
 
         <View style={Styles.container}>
-          
           <ul ref="list" style={Styles.list} 
               onTouchStart={this.onTouchStart}
               onTouchMove={this.onTouchMove}
-              onTouchEnd={this.onTouchEnd}
-            >
+              onTouchEnd={this.onTouchEnd} >
             {selectOption}
             <p style={borderTopStyle}></p>
             <p style={borderBottomStyle}></p>
           </ul>
-
           
         </View>
 
@@ -320,4 +296,139 @@ const Picker = React.createClass({
   },
 });
 
-module.exports = Picker;
+const Picker = React.createClass({
+
+  getInitialState () {
+    this.screenHeight = window.screen.height;
+    return {
+        
+    };
+  },
+
+  data: {
+
+  },
+
+  componentDidMount() {
+    //TODO::mount
+    
+  },
+
+  componeneDidUpdate() {
+    //TODO::update
+  },
+
+  onCancelEvent(e) {
+    e.preventDefault();
+    e.stopPropagation();    
+  },
+
+  clickHandler(key, e) {
+    
+    if (key === 'confirm') {
+        let changeCallback = this.props.onValueChange;
+        if (changeCallback && (typeof changeCallback === 'function')) {
+            
+            this.displaySelect(this.data);
+            changeCallback(this.data);
+        }
+    }
+
+    this.close();
+  },
+
+  displaySelect(data) {
+    var text = ReactDOM.findDOMNode(this.refs.text);
+    text.innerHTML = data.name;
+  },
+
+  getValue() {
+    return this.data;
+  },
+
+  changeCallback(data) {
+    if (typeof data === 'object') {
+        this.data = data;
+    } else {
+        this.data = {name: data, value: data};
+    }
+    console.log(this.data);
+  },
+
+  open() {
+    this.closed = false;
+    var picker = ReactDOM.findDOMNode(this.refs.picker);
+    picker.style.WebkitTransform = 'translate3d(0,' + ((this.screenHeight - 95)/10) + 'rem,0)';
+    picker.style.transform = 'translate3d(0,' + ((this.screenHeight - 95)/10) + 'rem,0)';
+
+    var overlay = ReactDOM.findDOMNode(this.refs.overlay);
+    overlay.style.display = 'block';
+  },
+
+  close() {
+    this.closed = true;
+    var picker = ReactDOM.findDOMNode(this.refs.picker);
+    picker.style.WebkitTransform = 'translate3d(0,' + ((this.screenHeight + 190)/10) + 'rem,0)';
+    picker.style.transform = 'translate3d(0,' + ((this.screenHeight + 190)/10) + 'rem,0)';
+
+    var overlay = ReactDOM.findDOMNode(this.refs.overlay);
+    overlay.style.display = 'none';
+  },
+
+  render() {
+    var {...containerStyles} = Styles.container;
+    // containerStyles.position = 'relative';
+    var {...pickerStyles} = Styles.container;
+    pickerStyles.transitionDuration = '1s';
+    pickerStyles.position = 'relative';
+    pickerStyles.zIndex = 99;
+    pickerStyles.WebkitTransform = 'translate3d(0,' + ((this.screenHeight + 190)/10) + 'rem,0)';
+    pickerStyles.transform = 'translate3d(0,' + ((this.screenHeight + 190)/10) + 'rem,0)';
+
+    var {...overlayStyles} = Styles.overlay;
+    overlayStyles.display = 'none';
+
+    var {...leftButton} = Styles.button;
+    leftButton.borderRight = '.1rem solid #d9d9d9';
+    leftButton.marginRight = '-.1rem';
+
+    let {
+        ...others
+    } = this.props;
+
+    return (
+        <View {...others}>
+            <Text ref="text" style={Styles.text} onClick={this.open} onPress={this.open}>{this.props.placeHolder}</Text>
+
+            <View style={containerStyles}>
+                <View ref='overlay' style={overlayStyles}
+                    onTouchStart={this.onCancelEvent}
+                    onTouchMove={this.onCancelEvent}
+                    onTouchEnd={this.onCancelEvent} />
+                <View ref="picker" style={pickerStyles}>
+                    <View style={Styles.operation}>
+                        <Button ref="cancel" style={leftButton} onClick={this.clickHandler.bind(null, 'cancel')}>取消</Button>
+                        <Button ref="confirm" style={Styles.button} onClick={this.clickHandler.bind(null, 'confirm')}>确定</Button>
+                    </View>
+
+                    <PickerCore
+                        options={this.props.options}
+                        onValueChange={this.changeCallback}
+                        itemStyle={this.props.itemStyle}
+                        selectedValue={this.props.selectedValue}
+                    />
+                </View>
+                
+            </View>
+            
+        </View>
+
+    );
+  },
+});
+
+module.exports = {
+    Picker: Picker,
+    PickerCore: PickerCore,
+};
+
