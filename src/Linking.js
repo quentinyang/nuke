@@ -11,11 +11,13 @@ class Linking extends React.Component {
         return {history: history};
     }
     render() {
+        let {children, ...props} = this.props;
+
         return (
             <Link
-                {...this.props}
+                {...props}
             >
-            {this.props.children}
+            {children}
             </Link>
         );
     }
