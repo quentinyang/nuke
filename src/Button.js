@@ -15,9 +15,11 @@ let Button = React.createClass({
             },
             ...this.props.style
         };
+        let {children, ...props} = this.props;
+
         return (
-            <span style={style} onClick={this.props.onClick}>
-                {this.props.children}
+            <span style={style} {...props}>
+                {children}
             </span>
         )
     }

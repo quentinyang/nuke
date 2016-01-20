@@ -2,9 +2,12 @@ import React from 'react';
 
 let Text = React.createClass({
     render: function() {
+        let {onPress, children, ...props} = this.props;
+
         return (
-            <span style={this.props.style} onClick={this.props.onPress}>
-                {this.props.children}
+            <span onClick={onPress}
+                {...props}>
+                {children}
             </span>
         )
     }
