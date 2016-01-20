@@ -12,14 +12,17 @@ var ListView = React.createClass({
     },
 
     render: function() {
-        var { dataSource, renderRow } = this.props;
+        var { dataSource, renderRow, style, ...other } = this.props;
         var list = dataSource.map((item, index) => {
             return renderRow(item, index);
         });
-
+        var styles = {
+            ...Styles.list,
+            style
+        };
 
         return (
-            <div style={{...Styles.list}}>
+            <div style={{...styles}} {...other}>
                 <div style={{...Styles.borderTop}}></div>
                 {list}
                 <div style={{...Styles.borderTop, ...Styles.borderBottom}}></div>

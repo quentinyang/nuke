@@ -10,6 +10,8 @@ let TextInput = React.createClass({
                 type = 'text';
         }
 
+        let {style, ...other} = this.props
+
         let styles = {
             ...{
                 width: '100%',
@@ -24,14 +26,16 @@ let TextInput = React.createClass({
                 borderColor: '#d9d9d9',
                 boxSizing:'border-box'
             },
-            ...this.props.style
+            ...style
         };
 
-        let {style, ...props} = this.props
+        
 
         return (
             <input
-            {...props} />
+                style={{...styles}}
+                {...other}
+            />
         )
     },
     onFocus: function(e) {

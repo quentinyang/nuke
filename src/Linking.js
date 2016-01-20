@@ -13,16 +13,7 @@ class Linking extends React.Component {
     render() {
         return (
             <Link
-                style={this.props.style || {}}
-                className={this.props.className || ''}
-                to={this.props.to}
-                query={this.props.query}
-                hash={this.props.hash}
-                state={this.props.state}
-                activeStyle={this.props.activeStyle}
-                activeClassName={this.props.activeClassName}
-                onlyActiveOnIndex={this.props.onlyActiveOnIndex}
-                onClick={this.props.onClick}
+                {...this.props}
             >
             {this.props.children}
             </Link>
