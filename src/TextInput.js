@@ -9,6 +9,7 @@ let TextInput = React.createClass({
             default:
                 type = 'text';
         }
+
         let style = {
             ...{
                 width: '100%',
@@ -25,18 +26,12 @@ let TextInput = React.createClass({
             },
             ...this.props.style
         };
+
+        let {style, ...props} = this.props
+
         return (
             <input
-            ref='input'
-            style={style}
-            type={type}
-            defaultValue={this.props.defaultValue}
-            value={this.props.value}
-            placeholder={this.props.placeholder}
-            maxLength={this.props.maxLength}
-            onFocus={this.onFocus}
-            onBlur={this.props.onBlur}
-            onChange={this.props.onChange} />
+            {...props} />
         )
     },
     onFocus: function(e) {
