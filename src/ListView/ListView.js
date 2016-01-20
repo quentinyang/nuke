@@ -7,7 +7,7 @@ import View from '../View';
 var ListView = React.createClass({
 
     propTypes: {
-        dataSource: PropTypes.array.isRequired,
+        // dataSource: PropTypes.array.isRequired,
         renderRow: PropTypes.func.isRequired
     },
 
