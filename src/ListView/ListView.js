@@ -18,7 +18,7 @@ var ListView = React.createClass({
         });
         var styles = {
             ...Styles.list,
-            style
+            ...style
         };
 
         return (

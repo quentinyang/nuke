@@ -16,6 +16,7 @@ let Button = React.createClass({
             },
             ...style
         };
+
         return (
             <span style={styles} {...props}>
                 {children}
