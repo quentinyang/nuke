@@ -13,6 +13,7 @@ var Nuke = {
     ListView: require('./ListView/ListView.js'),
     PullToRefreshView: require('./PullToRefreshView/PullToRefreshView.js'),
     Linking: require('./Linking'),
+    Combine: require('./Combine'),
 };
 
 module.exports = Nuke;
