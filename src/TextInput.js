@@ -10,7 +10,7 @@ let TextInput = React.createClass({
                 type = 'text';
         }
 
-        let style = {
+        let styles = {
             ...{
                 width: '100%',
                 fontSize: '16',
@@ -35,7 +35,7 @@ let TextInput = React.createClass({
         )
     },
     onFocus: function(e) {
-        this.refs.input.style.outline = 0;
+        this.refs.input.styles.outline = 0;
         this.props.onFocus ? this.props.onFocus(e) : '';
     }
     
