@@ -2,7 +2,8 @@ import React from 'react';
 
 let Button = React.createClass({
     render: function() {
-        let style = {
+        let {children, style, ...props} = this.props;
+        let styles = {
             ...{
                 display: 'block',
                 paddingTop: '10',
@@ -13,12 +14,10 @@ let Button = React.createClass({
                 backgroundColor: '#349ae9',
                 borderRadius: '5'
             },
-            ...this.props.style
+            ...style
         };
-        let {children, ...props} = this.props;
-
         return (
-            <span style={style} {...props}>
+            <span style={styles} {...props}>
                 {children}
             </span>
         )

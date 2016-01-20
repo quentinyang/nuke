@@ -15,15 +15,11 @@ let TextInput = React.createClass({
         let styles = {
             ...{
                 width: '100%',
-                fontSize: '16',
-                paddingLeft: '10',
-                paddingRight: '10',
-                paddingTop: '5',
-                paddingBottom: '5',
+                height: '34',
                 margin: '0',
-                borderWidth: '1',
-                borderStyle: 'solid',
-                borderColor: '#d9d9d9',
+                paddingLeft: '10',
+                border: '0',
+                fontSize: '16',
                 boxSizing:'border-box'
             },
             ...style
