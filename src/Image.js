@@ -2,18 +2,19 @@ import React from 'react';
 
 let Image = React.createClass({
     render: function() {
-        let style = {
+        let {style, source, ...props} = this.props;
+        let styles = {
             ...{
                 width: '100%',
                 border: '0',
                 padding: '0',
                 margin: '0'
             },
-            ...this.props.style
+            ...style
         };
-        let source = this.props.source.uri? this.props.source.uri: this.props.source;
+        let sources = source.uri? source.uri: source;
         return (
-            <img style={style} src={source} />
+            <img style={styles} src={sources} {...props} />
         )
     }
     
