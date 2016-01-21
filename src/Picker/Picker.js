@@ -71,7 +71,64 @@ const PickerCore = React.createClass({
   },
 
   init() {
-    this.setSelected(0);
+    this.setData(this.props.selectedValue);
+  },
+
+  /**
+   * Public method: 
+   * @param mixed. object or string or int. Seleted value.
+   * e.g.: {name: '中国', value: 'china'} or 'China'
+   * 
+   */
+  setData(data) {
+    var options = this.props.options;
+    if (options && options.length == 0) {
+        return;
+    }
+
+    var dataIndex = this.getDataIndex(data);
+
+    this.data.selected = options[dataIndex];
+
+    this.animate(this.getAnimateIndex(dataIndex));
+
+    // execute change handler (callback)
+    this.changeHandler(this.data.selected);
+  },
+
+  /**
+   * Get animation index
+   * @param dataIndex: index of array. e.g.: 0, 1, 2 ...
+   * @return int. e.g.: 2, 1, 0, -1, -2 ...
+   */
+  getAnimateIndex(dataIndex) {
+    return this.data.config.offset - dataIndex;
+  },
+
+  /**
+   * Get index of data. default is 0.
+   * @return init. e.g.: 0, 1, 2...
+   */
+  getDataIndex(selected) {
+    var selectedValue;
+    var options = this.props.options;
+    var index = 0;
+
+    if (selected) {
+        if (typeof selected === 'object') {
+            selectedValue = selected.value;
+            options.map(function(item, i) {
+                if (item.value == selectedValue) {
+                    index = i;
+                    return;
+                }
+            });
+        } else {
+            index = this.props.options.indexOf(selectedValue);
+            index = index < 0 ? 0 : index;
+        }    
+    }
+    return index;
   },
 
   componeneDidUpdate() {
@@ -79,14 +136,13 @@ const PickerCore = React.createClass({
   },
 
   goPrevious(e) {
-    console.log('previous');
-
-    this._animate(this.getIndex('prev'));
+    // console.log('previous');
+    this.animate(this.getIndex('prev'));
   },
 
   goNext(e) {
-    console.log('next');
-    this._animate(this.getIndex('next'));
+    // console.log('next');
+    this.animate(this.getIndex('next'));
   },
 
   setSelected(index) {
@@ -104,25 +160,20 @@ const PickerCore = React.createClass({
 
   },
 
+  getSelected() {
+    return this.data.selected;
+  },
+
   /* test funciton */
   run() {
     var self = this;
     var text = this.refs.text.value;
 
-    // for (var i = 0; i < Math.abs(text); i++) {
-    //   if (text > 0) {
-    //     self.goNext();
-    //   } else {
-    //     self.goPrevious();
-    //   }
-    // }
-
     this.setSelected(text);
   },
 
-  
-
   /**
+   * Get animation index
    * // max next index: -( (len-1) - offset )
    * // max previous index: offset
    * Case 1: offset = 2 (0,1,2,)
@@ -134,6 +185,9 @@ const PickerCore = React.createClass({
    *  total | max next | max previous 
    *  ===== | ======== | ============
    *  10    | -8       | 1
+   *
+   * @param string. 'prev' or 'next'
+   * @return int. animation index
    */
   getIndex(direction) {
     var offset = this.data.config.offset;
@@ -155,12 +209,9 @@ const PickerCore = React.createClass({
 
     // reset value
     this.data.animation.index = index;
-
-    console.log('index', index);
-
     this.data.selected = this.props.options[offset - index];
 
-    console.log('selected: ', offset - index, this.data.selected);
+    // console.log('=PickerCore >> Selected: ', offset - index, ':', this.data.selected, 'Animation Index: ', index);
 
     // execute change handler (callback)
     this.changeHandler(this.data.selected);
@@ -175,7 +226,7 @@ const PickerCore = React.createClass({
     }
   },
 
-  _animate(index) {
+  animate(index) {
     var self = this;
     var refs = this.refs;
     var selectedIndex = this.data.config.offset - index;
@@ -197,8 +248,6 @@ const PickerCore = React.createClass({
           text.style.color = '#000';
           text.style.WebkitTransform = 'scale(1.5, 1.5)';
           text.style.transform = 'scale(1.5, 1.5)';
-          // $(item).css('border-top', '0.1rem solid #ccc');
-          // $(item).css('border-bottom', '0.1rem solid #ccc');
         }
     });
 
@@ -206,7 +255,7 @@ const PickerCore = React.createClass({
 
   onTouchStart(e) {
     var touches = e.touches;
-    console.log('start', e.touches, e.changedTouches);
+    // console.log('start', e.touches, e.changedTouches);
   },
   onTouchMove(e) {
     var touches = e.touches;
@@ -219,9 +268,9 @@ const PickerCore = React.createClass({
 
     var moveDistance = (this.data.touch.end.y - this.data.touch.start.y) * this.data.config.buffer;
 
-    console.log('real move', (this.data.touch.end.y - this.data.touch.start.y), 
-                'Move buffer: ', moveDistance, 
-                'Current selected', this.data.selected);
+    // console.log('real move', (this.data.touch.end.y - this.data.touch.start.y), 
+    //             'Move buffer: ', moveDistance, 
+    //             'Current selected', this.data.selected);
 
     if (Math.abs(moveDistance) > this.data.config.perHeight) {
       this.data.touch.start.y = touches[0].pageY;
@@ -237,8 +286,6 @@ const PickerCore = React.createClass({
   onTouchEnd(e) {
     // Do nothing here.
   },
-
-
 
   onCancelEvent(e) {
     e.preventDefault();
@@ -261,12 +308,12 @@ const PickerCore = React.createClass({
       // console.log('name', name, 'value', value, 'Index:', key);
       return (
           <li key={key} style={Styles.item} ref={'item' + key}>
-            <span ref={'text' + key} 
+            <span ref={'text' + key}
                 style={{
-                        display: 'block', 
-                        transition: '0.5s ease', WebkitTransition: '0.5s ease', 
+                        display: 'block',
+                        transition: '0.5s ease', WebkitTransition: '0.5s ease',
                         transitionDelay: '0.1s', WebkitTransitionDelay: '0.1s'
-                    }} 
+                    }}
                 customize-data={value}>{name}</span>
           </li>
       );
@@ -299,18 +346,22 @@ const PickerCore = React.createClass({
 const Picker = React.createClass({
 
   getInitialState () {
+    
+    return {};
+  },
+  componentWillMount() {
     this.screenHeight = window.screen.height;
-    return {
-        
-    };
   },
 
-  data: {
-
-  },
+  // origin selected value, changes after pressing confirm button.
+  history: {},
+  // current selected value, always changes when you scroll the picker.
+  data: {},
 
   componentDidMount() {
     //TODO::mount
+    this.history = this.refs.pickerCore.getSelected();
+    this.data = this.refs.pickerCore.getSelected();
     
   },
 
@@ -326,20 +377,37 @@ const Picker = React.createClass({
   clickHandler(key, e) {
     
     if (key === 'confirm') {
+        // reset value and display changed value
+        // this.value = this.data;
+        this.displaySelect(this.data);
+
         let changeCallback = this.props.onValueChange;
         if (changeCallback && (typeof changeCallback === 'function')) {
-            
-            this.displaySelect(this.data);
-            changeCallback(this.data);
+            changeCallback(this.formatData(this.data));
         }
-    }
 
-    this.close();
+        this.history = this.data;
+        this.close();
+    } else {
+        this.rollback();
+        this.data = this.history;
+        this.close(); 
+    }
   },
 
   displaySelect(data) {
     var text = ReactDOM.findDOMNode(this.refs.text);
-    text.innerHTML = data.name;
+    //TODO::Use text api to update text.
+    text.innerHTML = data.name || data;
+  },
+
+  setValue(data) {
+    // set data
+    this.history = data;
+    this.data = data;
+
+    // set ui
+    this.rollback();
   },
 
   getValue() {
@@ -347,12 +415,20 @@ const Picker = React.createClass({
   },
 
   changeCallback(data) {
-    if (typeof data === 'object') {
-        this.data = data;
+    // this.data = this.formatData(data);
+    this.data = data;
+    // console.log(this.data);
+  },
+
+  formatData(data) {
+    var result;
+
+    if (typeof data != 'object') {
+        result = {name: data, value: data};
     } else {
-        this.data = {name: data, value: data};
+        var { ...result } = data;
     }
-    console.log(this.data);
+    return result;
   },
 
   open() {
@@ -363,6 +439,7 @@ const Picker = React.createClass({
 
     var overlay = ReactDOM.findDOMNode(this.refs.overlay);
     overlay.style.display = 'block';
+
   },
 
   close() {
@@ -373,6 +450,27 @@ const Picker = React.createClass({
 
     var overlay = ReactDOM.findDOMNode(this.refs.overlay);
     setTimeout(() => {overlay.style.display = 'none';}, 500);
+  },
+
+  rollback() {
+    var pickerCore = this.refs.pickerCore;
+
+    var options = this.props.options;
+    var historyValue = this.history;
+    var currentValue = this.data;
+
+    var indexValue = options.indexOf(historyValue);
+    indexValue = (indexValue === -1) ? 0 : indexValue;
+    var indexSelected = options.indexOf(currentValue);
+
+    var index = pickerCore.getAnimateIndex(indexValue);
+    
+    if ((indexSelected - indexValue) === 0) {
+        return;
+    }
+    console.log(historyValue,indexValue, index)
+
+    pickerCore.animate(index);
   },
 
   _transformUpStyle(styles) {
@@ -400,9 +498,12 @@ const Picker = React.createClass({
         ...others
     } = this.props;
 
+    var selected = this.formatData(this.props.selectedValue);
+    var displayText = selected.name || this.props.placeholder;
+
     return (
         <View {...others}>
-            <Text ref="text" style={Styles.text} onClick={this.open} onPress={this.open}>{this.props.placeholder}</Text>
+            <Text ref="text" style={Styles.text} onClick={this.open} onPress={this.open}>{displayText}</Text>
 
             <View style={containerStyles}>
                 <View ref='overlay' style={overlayStyles}
@@ -416,6 +517,7 @@ const Picker = React.createClass({
                     </View>
 
                     <PickerCore
+                        ref='pickerCore'
                         options={this.props.options}
                         onValueChange={this.changeCallback}
                         itemStyle={this.props.itemStyle}

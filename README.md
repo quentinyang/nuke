@@ -12,6 +12,8 @@ Write once use anywhere!
 1. Button
 1. Switch
 1. Image
+1. Select
+1. Icon
 
 ## Layout
 
@@ -22,6 +24,7 @@ Write once use anywhere!
 
 ## Component
 - Modal
+- Toast
 
 ## Custom Component
 
