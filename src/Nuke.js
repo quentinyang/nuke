@@ -14,6 +14,7 @@ var Nuke = {
     PullToRefreshView: require('./PullToRefreshView/PullToRefreshView.js'),
     Linking: require('./Linking'),
     Combine: require('./Combine'),
+    Icon: require('./Icon/Icon'),
 };
 
 module.exports = Nuke;
