@@ -5,7 +5,7 @@ let Icon = React.createClass({
     render: function() {
         let {value, style, ...props} = this.props;
         let styles = {
-            ...Styles.iconfont
+            ...Styles.iconfont,
             ...style
         };
         return (
