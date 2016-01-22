@@ -2,22 +2,21 @@ import React from 'react';
 
 let TextInput = React.createClass({
     render: function() {
-        let type = '';
-        switch(this.props.keyboardType) {
+        let type = '',
+            {style, keyboardType, ...other} = this.props;
+        switch(keyboardType) {
             case 'numeric':
                 type = 'tel';
+                break;
             default:
                 type = 'text';
         }
-
-        let {style, ...other} = this.props
 
         let styles = {
             ...{
                 width: '100%',
                 height: '34',
                 margin: '0',
-                paddingLeft: '10',
                 border: '0',
                 fontSize: '16',
                 boxSizing:'border-box'
@@ -25,11 +24,10 @@ let TextInput = React.createClass({
             ...style
         };
 
-        
-
         return (
             <input
-                style={{...styles}}
+                style={styles}
+                type={type}
                 {...other}
             />
         )
