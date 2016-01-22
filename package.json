@@ -25,7 +25,9 @@
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
     "gulp-sass": "^2.1.1",
-    "gulp-util": "^3.0.7"
+    "gulp-util": "^3.0.7",
+    "immutable": "^3.7.6",
+    "react-addons-pure-render-mixin": "^0.14.6"
   }
 }
 
