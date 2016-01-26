@@ -3,15 +3,15 @@
 import React, { PropTypes } from 'react';
 import Styles from './Style';
 import View from '../View';
+import Immutable from 'immutable';
+import Component from '../Component';
 
-var ListView = React.createClass({
+class ListView extends Component {
+    constructor(props) {
+        super(props)
+    }
 
-    propTypes: {
-        // dataSource: PropTypes.array.isRequired,
-        renderRow: PropTypes.func.isRequired
-    },
-
-    render: function() {
+    render() {
         var { dataSource, renderRow, style, ...other } = this.props;
         var list = dataSource.map((item, index) => {
             return renderRow(item, index);
@@ -29,6 +29,11 @@ var ListView = React.createClass({
             </div>
         )
     }
-});
+}
+
+ListView.propTypes = {
+    dataSource: PropTypes.instanceOf(Immutable.List),
+    renderRow: PropTypes.func.isRequired
+}
 
 module.exports = ListView;
