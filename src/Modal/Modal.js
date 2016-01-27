@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import View from '../View.js';
 import Styles from './Style'
+import Combine from '../Combine'
 
 class Modal extends React.Component {
     constructor(props) {
@@ -8,8 +9,9 @@ class Modal extends React.Component {
     }
 
     render() {
-        let transparentStyle = this.props.transparent ? {backgroundColor: '#000', opacity: '0.33'} : {backgroundColor: '#eee'};
-        let visibleStyle = this.props.visible ? {display: 'block'} : {display: 'none'};
+        let {transparent, visible, style, ...other} = this.props;
+        let transparentStyle = transparent ? {backgroundColor: '#000', opacity: '0.33'} : {backgroundColor: '#eee'};
+        let visibleStyle = visible ? {display: 'block'} : {display: 'none'};
 
         let containerStyle = {
             ...Styles.container,
@@ -24,7 +26,7 @@ class Modal extends React.Component {
         return (
             <View style={containerStyle}>
                 <View style={maskStyle}/>
-                <View style={Styles.content}>
+                <View style={Combine(Styles.content, style)} {...other}>
                     {this.props.children}
                 </View>
             </View>
