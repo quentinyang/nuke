@@ -13,16 +13,16 @@ let Style = {
         zIndex: '999'
     },
     content: {
-        position: 'absolute',
+        position: 'fixed',
         left: '50%',
         top: '50%',
-        width: '27rem',
-        height: '15rem',
+        width: '85%',
+        WebkitTransform: 'translate(-50%, -50%)',
+        transform: 'translate(-50%, -50%)',
         padding: '1.5rem',
         backgroundColor: '#fff',
         opacity: '0.95',
         borderRadius: '1.6rem',
-        transform: 'translate(-50%, -50%)',
         textAlign: 'center',
         zIndex: '1000'
     }
