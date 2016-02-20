@@ -22,7 +22,6 @@ let Style = {
         padding: '1.5rem',
         backgroundColor: '#fff',
         opacity: '0.95',
-        borderRadius: '1.6rem',
         textAlign: 'center',
         zIndex: '1000'
     }
