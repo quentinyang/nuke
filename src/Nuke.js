@@ -2,6 +2,7 @@ var Nuke = {
     Styles: require('./Styles'),
     Picker: require('./Picker/Picker').Picker,
     View: require('./View'),
+    Tel: require('./Tel'),
     Text: require('./Text'),
     TextInput: require('./TextInput.js'),
     Image: require('./Image.js'),
@@ -15,6 +16,7 @@ var Nuke = {
     Linking: require('./Linking'),
     Combine: require('./Combine'),
     Icon: require('./Icon/Icon'),
+
 };
 
 module.exports = Nuke;
