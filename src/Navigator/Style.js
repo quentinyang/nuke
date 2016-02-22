@@ -10,30 +10,18 @@ let Style = {
         position: 'absolute',
         top: 0,
     },
-
     leftArrow: {
         position:'absolute',
         textAlign: 'left',
         left: 0,
         top: 0,
-        color: '#007aff',
-    },
-    fontIcon: {
-        color: '#007aff',
-        display: 'inline-block',
-        marginLeft: '0.5rem',
-        marginRight: '0.5rem',
-        fontSize: '2.4rem',
-        verticalAlign: 'top',
-        lineHeight: 'inherit',
+        color: '#ff9d34',
     },
     arrowText: {
         display: 'inline-block',
-        verticalAlign: 'middle',//TODO::top
         fontSize: 'inherit',
         lineHeight: 'inherit',
     },
-    
     rightArrow: {
         position:'absolute',
         textAlign: 'right',
@@ -41,15 +29,27 @@ let Style = {
         top: 0,
         color: '#007aff',
     },
-
     onepx: {
         display: 'block',
         height: '0.1rem',
         backgroundColor: '#b2b2b2',
         width: '100%',
 
+    },
+    leftArrowIcon: {
+        display: 'inline-block',
+        padding: '0 10px 0 5px',
+        transform: 'rotate(180deg)',
+        OTransform: 'rotate(180deg)',
+        WebkitTransform: 'rotate(180deg)',
+        MozTransform: 'rotate(180deg)'
+    },
+    rightArrowIcon: {
+        display: 'inline-block',
+        padding: '0 10px 0 5px'
+    },
+    arrowColor: {
+        color: '#ff9d34'
     }
-
-
 };
 module.exports = Style;

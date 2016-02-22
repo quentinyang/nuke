@@ -1,15 +1,15 @@
 const React = require('react');
 import View from '../View.js';
 import Text from '../Text.js';
+import Icon from '../Icon/Icon.js';
 import Styles from './Style';
 
 let LeftArrow = React.createClass({
 
   render() {
     return (
-
         <View style={Styles.leftArrow} onClick={this.props.onClick}>
-            <Text style={Styles.fontIcon}>&lt;</Text>
+            <View style={Styles.leftArrowIcon}><Icon value="&#xe610;" style={Styles.arrowColor}/></View>
             <Text style={Styles.arrowText}>{this.props.text}</Text>
         </View>
 
@@ -23,7 +23,7 @@ let RightArrow = React.createClass({
     return (
 
         <View style={Styles.rightArrow} onClick={this.props.onClick}>
-            <Text style={Styles.arrowText}>{this.props.text}</Text>
+            <View style={Styles.rightArrowIcon}><Icon value="&#xe610;" style={Styles.arrowColor}/></View>
             <Text style={Styles.fontIcon}>&gt;</Text>
         </View>
 
