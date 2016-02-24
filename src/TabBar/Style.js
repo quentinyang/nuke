@@ -61,7 +61,8 @@ let style = {
         lineHeight: '16px'
     },
     iconColor: {
-        color: '#007aff'
+        color: '#007aff',
+        fontSize: '24px'
     }
 };
 

@@ -25,7 +25,8 @@ class TabBar extends Component {
             let isSelected = item.get('isSelected')
             let selectedStyle = Styles.tabsTab
             let iconSelected = {
-                'color': '#777'
+                'color': '#777',
+                'fontSize': '24px'
             }
 
             if (isSelected) {
