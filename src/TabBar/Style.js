@@ -57,6 +57,11 @@ let style = {
         textOverflow: 'ellipsis',
         whiteSpace: 'nowrap',
         fontSize: '11px',
+        height: '16px',
+        lineHeight: '16px'
+    },
+    iconColor: {
+        color: '#007aff'
     }
 };
 

@@ -3,6 +3,7 @@
 import React, { PropTypes } from 'react';
 import Styles from './Style';
 import View from '../View';
+import Linking from '../Linking';
 import Icon from '../Icon/Icon';
 import Immutable from 'immutable';
 import Component from '../Component';
@@ -23,21 +24,24 @@ class TabBar extends Component {
         let list = data.map((item, index) => {
             let isSelected = item.get('isSelected')
             let selectedStyle = Styles.tabsTab
+            let iconSelected = {}
 
             if (isSelected) {
                 selectedStyle = {
                     ...Styles.tabsTab,
                     ...Styles.isSelected
                 }
+
+                iconSelected = Styles.iconColor
             }
 
             return (
-                <View style={selectedStyle} key={index}>
+                <Linking to={item.get('link')} style={selectedStyle} key={index}>
                     <View style={Styles.tabsIcon}>
-                        <Icon value={item.get('iconValue')}/>
+                        <Icon style={iconSelected} value={item.get('iconValue')}/>
                     </View>
                     <View style={Styles.tabsLabel}>{item.get('label')}</View>
-                </View>
+                </Linking>
             )
         })
 
