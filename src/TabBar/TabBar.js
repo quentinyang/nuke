@@ -24,7 +24,9 @@ class TabBar extends Component {
         let list = data.map((item, index) => {
             let isSelected = item.get('isSelected')
             let selectedStyle = Styles.tabsTab
-            let iconSelected = {}
+            let iconSelected = {
+                'color': '#777'
+            }
 
             if (isSelected) {
                 selectedStyle = {
