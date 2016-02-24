@@ -16,7 +16,7 @@ var Nuke = {
     Linking: require('./Linking'),
     Combine: require('./Combine'),
     Icon: require('./Icon/Icon'),
-
+    TabBar: require('./TabBar/TabBar')
 };
 
 module.exports = Nuke;
