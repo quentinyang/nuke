@@ -50,7 +50,7 @@ let Navbar = React.createClass({
   },
 
   render() {
-    var leftArrow = (this.props.onBack && typeof this.props.onBack === 'function') ? (<LeftArrow ref='back' text='Back' onClick={this.props.onBack}/>) : '';
+    var leftArrow = (this.props.onBack && typeof this.props.onBack === 'function') ? (<LeftArrow ref='back' text='' onClick={this.props.onBack}/>) : '';
     var rightArrow = (this.props.onForward && typeof this.props.onForward === 'function') ? (<RightArrow ref='forword' text='Forword' onClick={this.props.onForward}/>) : '';
 
     return (

@@ -38,7 +38,7 @@ let Style = {
     },
     leftArrowIcon: {
         display: 'inline-block',
-        padding: '0 10px 0 5px',
+        padding: '0 10px 0 30px',
         transform: 'rotate(180deg)',
         OTransform: 'rotate(180deg)',
         WebkitTransform: 'rotate(180deg)',
