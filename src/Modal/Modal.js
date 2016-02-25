@@ -9,7 +9,7 @@ class Modal extends React.Component {
     }
 
     render() {
-        let {transparent, visible, style, ...other} = this.props;
+        let {transparent, visible, style, maskClick, ...other} = this.props;
         let transparentStyle = transparent ? {backgroundColor: '#000', opacity: '0.33'} : {backgroundColor: '#eee'};
         let visibleStyle = visible ? {display: 'block'} : {display: 'none'};
 
@@ -25,7 +25,7 @@ class Modal extends React.Component {
 
         return (
             <View style={containerStyle}>
-                <View style={maskStyle}/>
+                <View style={maskStyle} onClick={maskClick}/>
                 <View style={Combine(Styles.content, style)} {...other}>
                     {this.props.children}
                 </View>
