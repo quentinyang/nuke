@@ -17,6 +17,7 @@ let style = {
         position: 'fixed',
         bottom: '0',
         zIndex: '4',
+        borderTop: '0.1rem solid #bfbfc3',
     },
     tabsTab: {
         WebkitAlignItems: 'center',
