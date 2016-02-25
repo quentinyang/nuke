@@ -34,7 +34,7 @@ let style = {
         justifyContent: 'center',
         background: 'none transparent',
         border: '0 none',
-        color: '#222222',
+        color: '#ADABB1',
         cursor: 'pointer',
         lineHeight: '1',
         padding: '0 5px',
@@ -44,7 +44,7 @@ let style = {
     },
     isSelected: {
         backgroundColor: 'transparent',
-        color: '#007aff',
+        color: '#40bb9c',
     },
     tabsIcon: {
         display: 'inline-block',
@@ -61,7 +61,7 @@ let style = {
         lineHeight: '16px'
     },
     iconColor: {
-        color: '#007aff',
+        color: '#40bb9c',
         fontSize: '24px'
     }
 };
