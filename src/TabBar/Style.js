@@ -45,7 +45,7 @@ let style = {
     },
     isSelected: {
         backgroundColor: 'transparent',
-        color: '#40bb9c',
+        color: '#349ae9',
     },
     tabsIcon: {
         display: 'inline-block',
@@ -59,10 +59,11 @@ let style = {
         whiteSpace: 'nowrap',
         fontSize: '11px',
         height: '16px',
-        lineHeight: '16px'
+        lineHeight: '16px',
+        WebkitFontSmoothing: 'antialiased'
     },
     iconColor: {
-        color: '#40bb9c',
+        color: '#349ae9',
         fontSize: '24px'
     }
 };

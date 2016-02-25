@@ -1,11 +1,11 @@
 let Style = {
     container: {
-        height: '4.4rem',
-        lineHeight: '4.4rem',
+        height: '5rem',
+        lineHeight: '5rem',
         width: '100%',
         zIndex: 30,
         textAlign: 'center',
-        backgroundColor: '#efeff4',
+        backgroundColor: '#f8f8f8',
         fontSize: '1.7rem',
         position: 'absolute',
         top: 0,
@@ -32,7 +32,7 @@ let Style = {
     onepx: {
         display: 'block',
         height: '0.1rem',
-        backgroundColor: '#b2b2b2',
+        backgroundColor: '#d9d9d9',
         width: '100%',
 
     },
@@ -49,7 +49,7 @@ let Style = {
         padding: '0 10px 0 5px'
     },
     arrowColor: {
-        color: '#ff9d34'
+        color: '#349ae9'
     }
 };
 module.exports = Style;
