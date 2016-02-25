@@ -7,7 +7,7 @@ let style = {
     borderTop: {
         width: '100%',
         height: 1,
-        backgroundColor: 'rgba(0, 0, 0, 0.17)',
+        backgroundColor: '#ddd',
         content: " ",
         left: 0,
         position: 'absolute'
