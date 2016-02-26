@@ -24,7 +24,7 @@ function buildTask() {
     function babelBundle () {
         return gbabel({
                 "presets": ['react', 'es2015'],
-                "plugins": ["transform-object-rest-spread"]
+                "plugins": ["transform-object-rest-spread", "transform-object-assign"]
             }).on('error',function(e){
                 gutil.log(gutil.colors.magenta(e.message), "\n", gutil.colors.magenta(e.codeFrame));
 

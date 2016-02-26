@@ -2,8 +2,8 @@ let style = {
     tabsNavigator: {
         WebkitAlignItems: 'stretch',
         alignItems: 'stretch',
-        display: '-ms-flexbox',
-        display: 'flex',
+        // display: '-ms-flexbox',
+        // display: 'flex',
         display: '-webkit-flex',
         WebkitJustifyContent: 'space-around',
         justifyContent: 'space-around',
@@ -12,7 +12,7 @@ let style = {
         backfaceVisibility: 'hidden',
         backgroundColor: '#efeff4',
         color: '#222222',
-        height: '44px',
+        height: '50px',
         width: '100%',
         position: 'fixed',
         bottom: '0',
@@ -22,8 +22,8 @@ let style = {
     tabsTab: {
         WebkitAlignItems: 'center',
         alignItems: 'center',
-        display: '-ms-flexbox',
-        display: 'flex',
+        // display: '-ms-flexbox',
+        // display: 'flex',
         display: '-webkit-flex',
         WebkitFlexFlow: 'column nowrap',
         MsFlexFlow: 'column nowrap',
@@ -64,7 +64,7 @@ let style = {
     },
     iconColor: {
         color: '#349ae9',
-        fontSize: '24px'
+        fontSize: '30px'
     }
 };
 
