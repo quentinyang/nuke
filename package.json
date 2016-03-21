@@ -1,6 +1,6 @@
 {
   "name": "nuke",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A repository for React Components, can be used by React JS and React Native",
   "main": "nuke.js",
   "scripts": {

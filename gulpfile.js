@@ -14,11 +14,14 @@ var config = {
     //     dest: './dist'
     // }, 
     component: {
-        src: './src',
+        src: './source-native',
         dest: './lib'
     }
 
 };
+
+var copyDir = '/tmp/';
+copyDir = '~/workspace/project/angejia/fangyuan360/fy360-native/';
 
 function buildTask() {
     function babelBundle () {
@@ -42,7 +45,14 @@ function cleanTask(cb, params) {
     return del([config.component.dest], cb);
 }
 
-gulp.task('build', buildTask);
+function hotcopy() {
+    return gulp.src('./**/*')
+    .pipe(gulp.dest(copyDir + 'node_modules/nuke'))
+}
+
+gulp.task('build', ['buildTask'], hotcopy);
+
+gulp.task('buildTask', buildTask);
 
 gulp.task('clean', cleanTask);
 
