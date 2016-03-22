@@ -1,6 +1,6 @@
-import React from 'react-native';
+import React, {View} from 'react-native';
 
-let PureRenderMixin = require('react-addons-pure-render-mixin')
+let PureRenderMixin = require('react-addons-pure-render-mixin');
 
 class Component extends React.Component {
     constructor(props) {
@@ -12,4 +12,4 @@ class Component extends React.Component {
     }
 }
 
-export default Component;
+module.exports = Component;
