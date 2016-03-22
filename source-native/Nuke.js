@@ -13,7 +13,17 @@ let Nuke = {
     React: require('./React.js'),
     Dimensions: require('./CommonApi').Dimensions,
     PixelRatio: require('./CommonApi').PixelRatio,
-    StyleSheet: require('./CommonApi').StyleSheet
+    StyleSheet: require('./CommonApi').StyleSheet,
+    
+    TextInput: require('./TextInput'),
+    WebView: require('./WebView'),
+    ScrollView: require('./ScrollView'),
+
+    Progress: require('./Progress/Progress'),
+
+    Touchable: require('./Touchable/Touchable'),
+    Button: require('./Touchable/Button'),
+    Link: require('./Touchable/Link'),
 };
 
 module.exports = Nuke;
