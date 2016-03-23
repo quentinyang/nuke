@@ -5,6 +5,7 @@ let Nuke = {
     Image: require('./Image.js'),
     MapView: require('./MapView.js'),
     Picker: require('./Picker.js'),
+    Alert: require('./Alert.js'),
     RefreshControl: require('./RefreshControl.js'),
     Navigator: require('./Navigator.js'),
     ListView: require('./ListView.js'),
@@ -14,7 +15,7 @@ let Nuke = {
     Dimensions: require('./CommonApi').Dimensions,
     PixelRatio: require('./CommonApi').PixelRatio,
     StyleSheet: require('./CommonApi').StyleSheet,
-    
+
     TextInput: require('./TextInput'),
     WebView: require('./WebView'),
     ScrollView: require('./ScrollView'),
