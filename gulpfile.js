@@ -8,20 +8,25 @@ var fs = require('fs');
 var gbabel = require('gulp-babel');
 var gutil = require('gulp-util');
 
+var nukeconf = {};
+var copyDir = '/tmp/';
+var sourceDir = './source-native';
+
+try{
+    nukeconf = require('./.nukerc.json');
+    copyDir = nukeconf.rndir;
+    sourceDir = nukeconf.source;
+}catch(e) {
+    console.error('[Error] Please put your RN app dir in ./.nukerc.json. For example:\n{"rndir": "YOUR/RN/DIR/"}\n');
+    return;
+}
+
 var config = {
-    // cssui: {
-    //     src: './materialize',
-    //     dest: './dist'
-    // }, 
     component: {
-        src: './source-native',
+        src: sourceDir,
         dest: './lib'
     }
-
 };
-
-var copyDir = '/tmp/';
-copyDir = '~/workspace/project/angejia/fangyuan360/fy360-native/';
 
 function buildTask() {
     function babelBundle () {
