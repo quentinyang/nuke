@@ -1,11 +1,11 @@
 import React, { PropTypes, StyleSheet, Text, TouchableHighlight } from 'react-native'
 import Component from '../Component'
-import StyleSheetPropType from 'StyleSheetPropType';
+/*import StyleSheetPropType from 'StyleSheetPropType';
 import ViewStylePropTypes from 'ViewStylePropTypes';
 import TextStylePropTypes from 'TextStylePropTypes';
 
 let ViewStylePropType = StyleSheetPropType(ViewStylePropTypes);
-let TextStylePropType = StyleSheetPropType(TextStylePropTypes);
+let TextStylePropType = StyleSheetPropType(TextStylePropTypes);*/
 
 class Button extends Component {
     constructor(props) {
@@ -49,8 +49,8 @@ class Button extends Component {
 Button.propTypes= {
     label: PropTypes.string,
     disable: PropTypes.bool,
-    containerStyle: ViewStylePropType,
-    itemStyle: TextStylePropType,
+    //containerStyle: ViewStylePropType,
+    //itemStyle: TextStylePropType,
     onPress: PropTypes.func,
     onLongPress: PropTypes.func,
 };
