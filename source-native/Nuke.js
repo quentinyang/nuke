@@ -21,8 +21,10 @@ let Nuke = {
     Progress: require('./Progress/Progress'),
     TabBar: require('./TabBar/TabBar'),
 
-    Touchable: require('./Touchable/Touchable'),
-    Button: require('./Touchable/Button'),
+    TouchableHighlight: require('./Touchable').TouchableHighlight,
+    TouchableOpacity: require('./Touchable').TouchableOpacity,
+    TouchableWithoutFeedback: require('./Touchable').TouchableWithoutFeedback,
+    Button: require('./Button'),
     Linking: require('./Linking'),
 
     Modal: require('./Modal/Modal')
