@@ -1,5 +1,5 @@
 import React, { PropTypes, StyleSheet, Text, TouchableHighlight } from 'react-native'
-
+import Component from '../Component'
 import StyleSheetPropType from 'StyleSheetPropType';
 import ViewStylePropTypes from 'ViewStylePropTypes';
 import TextStylePropTypes from 'TextStylePropTypes';
@@ -7,7 +7,7 @@ import TextStylePropTypes from 'TextStylePropTypes';
 let ViewStylePropType = StyleSheetPropType(ViewStylePropTypes);
 let TextStylePropType = StyleSheetPropType(TextStylePropTypes);
 
-class Button extends React.Component {
+class Button extends Component {
     constructor(props) {
         super(props);
     }
@@ -53,7 +53,6 @@ Button.propTypes= {
     itemStyle: TextStylePropType,
     onPress: PropTypes.func,
     onLongPress: PropTypes.func,
-
 };
 
 Button.defaultProps = {

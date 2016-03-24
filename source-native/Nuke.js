@@ -23,7 +23,9 @@ let Nuke = {
 
     Touchable: require('./Touchable/Touchable'),
     Button: require('./Touchable/Button'),
-    Link: require('./Touchable/Link'),
+    Linking: require('./Linking'),
+
+    Modal: require('./Modal/Modal')
 };
 
 module.exports = Nuke;
