@@ -15,6 +15,7 @@ let Nuke = {
     Dimensions: require('./CommonApi').Dimensions,
     PixelRatio: require('./CommonApi').PixelRatio,
     StyleSheet: require('./CommonApi').StyleSheet,
+    InteractionManager: require('./CommonApi').InteractionManager,
     TextInput: require('./TextInput'),
     WebView: require('./WebView'),
     ScrollView: require('./ScrollView'),
