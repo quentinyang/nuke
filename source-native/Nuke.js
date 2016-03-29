@@ -15,6 +15,8 @@ let Nuke = {
     Dimensions: require('./CommonApi').Dimensions,
     PixelRatio: require('./CommonApi').PixelRatio,
     StyleSheet: require('./CommonApi').StyleSheet,
+    Platform: require('./CommonApi').Platform,
+    BackAndroid: require('./CommonApi').BackAndroid,
     InteractionManager: require('./CommonApi').InteractionManager,
     TextInput: require('./TextInput'),
     WebView: require('./WebView'),
