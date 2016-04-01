@@ -18,6 +18,7 @@ let Nuke = {
     Platform: require('./CommonApi').Platform,
     BackAndroid: require('./CommonApi').BackAndroid,
     InteractionManager: require('./CommonApi').InteractionManager,
+    AppRegistry: require('./CommonApi').AppRegistry,
     TextInput: require('./TextInput'),
     WebView: require('./WebView'),
     ScrollView: require('./ScrollView'),
