@@ -19,7 +19,7 @@ class Button extends Component {
         return (
             <TouchableHighlight
                 style={[styles.container, containerStyle]}
-                underlayColor="#fff"
+                underlayColor="#04C1AE"
                 onPress={this.onPress.bind(this)}
                 onLongPress={this.onLongPress.bind(this)}
                 {...other}
@@ -63,17 +63,15 @@ Button.defaultProps = {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#fff'
-    },
-    item: {
         flex: 1,
+        justifyContent: "center",
         height: 40,
-        lineHeight: 30,
-        fontSize: 19,
-        textAlign: 'center',
         backgroundColor: '#04C1AE',
         borderRadius: 10,
-        borderWidth: 0,
+    },
+    item: {
+        fontSize: 19,
+        textAlign: 'center',
         color: '#fff'
     },
     disabledItem: {
