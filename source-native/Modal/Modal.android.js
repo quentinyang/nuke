@@ -1,83 +1,86 @@
-import React, { PropTypes } from 'react-native'
-import Portal from 'react-native/Libraries/Portal/Portal'
+'use strict';
+
+import React, { PropTypes } from 'react-native';
+import Portal from 'react-native/Libraries/Portal/Portal.js';
 import InteractionManager from 'react-native/Libraries/Interaction/InteractionManager'
 import Component from '../Component'
 import View from '../View'
 import { StyleSheet } from '../CommonApi'
 
-class Modal extends Component {
+class Modal extends Component{
     constructor(props) {
         super(props);
+        this.portalTag = null;
+    }
 
-        this.state = {
-            pos: 0
-        }
-    }
     componentWillMount() {
-        this.tag = Portal.allocateTag();
+        this.portalTag = Portal.allocateTag();
     }
-    componentDidMount() {
-        if (this.props.visible) {
-            Portal.showModal(this.tag, this._renderModal(this.props));
-        }
+
+    componentWillUnmount() {
+        Portal.closeModal(this.portalTag);
+        this.portalTag = null;
     }
+
     componentWillReceiveProps(newProps) {
         if (newProps.visible) {
-            Portal.showModal(this.tag, this._renderModal(newProps));
-            //this.animateUp(); //some animation display when modal open
+            Portal.showModal(this.portalTag, this.renderModal(newProps));
         } else {
-            //some animation display when modal close
-            //this.animateDown();
-            //InteractionManager.runAfterInteractions(()=> {
-                Portal.closeModal(this.tag);
-            //})
+            Portal.closeModal(this.portalTag);
         }
     }
+
+    componentDidUpdate(previousProps) {
+        if (!previousProps.visible && this.props.visible) {
+            if (this.props.onShow) {
+                this.props.onShow();
+            }
+        } else if(previousProps.visible && !this.props.visible) {
+            if (this.props.onDismiss) {
+                this.props.onDismiss();
+            }
+        }
+    }
+
+    renderModal(newProps) {
+        var modalBackgroundColorStyle = {
+            backgroundColor: newProps.transparent ? 'transparent' : '#000000',
+        };
+
+        return (
+            <View key={this.portalTag} style={[styles.container, modalBackgroundColorStyle]}>
+                {this.props.children}
+            </View>
+        );
+    }
+
     render() {
-        return <Portal onModalVisibilityChanged={this.props.onModalVisibilityChanged} />
-    }
-    _renderModal(newProps) {
-        var children = newProps.children;
-        let {style, animated} = this.props;
-        if(1){
-            return (
-                <View key="modal" style={style ? style : styles.container}>
-                    {children}
-                </View>
-            )
-        } else {
-            return /*(
-                <Animated.View
-                    style={[styles.container, {top: this.state.pos}]}
-                >
-                    {children}
-                </Animated.View>
-            )*/
-        }
+        return null;
     }
 }
 
+var styles = StyleSheet.create({
+    container: {
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+    }
+});
+
 Modal.propTypes= {
+    animated: PropTypes.bool,
+    transparent: PropTypes.bool,
     visible: PropTypes.bool,
-    //animated: PropTypes.bool,
-    //style: ViewStylePropType,
-    onModalVisibilityChanged: PropTypes.func.isRequired
+    onShow: PropTypes.func,
+    onDismiss: PropTypes.func,
 };
 
 Modal.defaultProps = {
-    visible: false,
     animated: false,
-    onModalVisibilityChanged: function() {}
+    transparent: false,
+    visible: false,
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        padding: 20,
-        backgroundColor: '#000',
-        opacity: 0.5
-    }
-});
 
 module.exports = Modal;
