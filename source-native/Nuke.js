@@ -20,7 +20,6 @@ let Nuke = {
     InteractionManager: require('./CommonApi').InteractionManager,
     AppRegistry: require('./CommonApi').AppRegistry,
     TextInput: require('./TextInput'),
-    TextInputState: require('./TextInputState'),
     WebView: require('./WebView'),
     ScrollView: require('./ScrollView'),
     StatusBar: require('./StatusBar'),
