@@ -1,3 +1,3 @@
-import { Dimensions, PixelRatio, StyleSheet, InteractionManager, Platform, BackAndroid, AppRegistry } from 'react-native';
+import { Dimensions, PixelRatio, StyleSheet, InteractionManager, Platform, BackAndroid, AppRegistry, NativeModules } from 'react-native';
 
-module.exports = {Dimensions, PixelRatio, StyleSheet, InteractionManager, Platform, BackAndroid, AppRegistry};
+module.exports = {Dimensions, PixelRatio, StyleSheet, InteractionManager, Platform, BackAndroid, AppRegistry, NativeModules};

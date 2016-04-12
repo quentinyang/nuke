@@ -31,7 +31,6 @@ let Nuke = {
     TouchableWithoutFeedback: require('./Touchable').TouchableWithoutFeedback,
     Button: require('./Button'),
     Linking: require('./Linking'),
-    StatusBar: require('./StatusBar'),
     Modal: require('./Modal/Modal')
 };
 
