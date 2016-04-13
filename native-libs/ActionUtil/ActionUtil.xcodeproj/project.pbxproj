@@ -1,0 +1,371 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3BC13B551CBE30C600D795FC /* ActionUtil.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3BC13B541CBE30C600D795FC /* ActionUtil.h */; };
+		3BC13B571CBE30C600D795FC /* ActionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B561CBE30C600D795FC /* ActionUtil.m */; };
+		3BC13B821CBE30E300D795FC /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B5F1CBE30E300D795FC /* App.m */; };
+		3BC13B831CBE30E300D795FC /* BIFAppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B611CBE30E300D795FC /* BIFAppConfig.m */; };
+		3BC13B841CBE30E300D795FC /* BIFFileHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B631CBE30E300D795FC /* BIFFileHandler.m */; };
+		3BC13B851CBE30E300D795FC /* BIFKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B651CBE30E300D795FC /* BIFKeychain.m */; };
+		3BC13B861CBE30E300D795FC /* BIFLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B671CBE30E300D795FC /* BIFLocation.m */; };
+		3BC13B871CBE30E300D795FC /* BIFLogConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B691CBE30E300D795FC /* BIFLogConfig.m */; };
+		3BC13B881CBE30E300D795FC /* BIFLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B6B1CBE30E300D795FC /* BIFLogger.m */; };
+		3BC13B891CBE30E300D795FC /* BIFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B6D1CBE30E300D795FC /* BIFModel.m */; };
+		3BC13B8A1CBE30E300D795FC /* BIFObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B701CBE30E300D795FC /* BIFObject.m */; };
+		3BC13B8B1CBE30E300D795FC /* BIFSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B721CBE30E300D795FC /* BIFSingleton.m */; };
+		3BC13B8C1CBE30E300D795FC /* BIFUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B741CBE30E300D795FC /* BIFUUID.m */; };
+		3BC13B8D1CBE30E300D795FC /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B771CBE30E300D795FC /* Device.m */; };
+		3BC13B8E1CBE30E300D795FC /* NetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B791CBE30E300D795FC /* NetworkRequest.m */; };
+		3BC13B8F1CBE30E300D795FC /* NSObject+BIFNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B7B1CBE30E300D795FC /* NSObject+BIFNetwork.m */; };
+		3BC13B901CBE30E300D795FC /* NSString+BIFNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B7D1CBE30E300D795FC /* NSString+BIFNetwork.m */; };
+		3BC13B911CBE30E300D795FC /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B7F1CBE30E300D795FC /* NSString+MD5.m */; };
+		3BC13B921CBE30E300D795FC /* UIDevice+CFL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC13B811CBE30E300D795FC /* UIDevice+CFL.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3BC13B4F1CBE30C600D795FC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				3BC13B551CBE30C600D795FC /* ActionUtil.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3BC13B511CBE30C600D795FC /* libActionUtil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libActionUtil.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC13B541CBE30C600D795FC /* ActionUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionUtil.h; sourceTree = "<group>"; };
+		3BC13B561CBE30C600D795FC /* ActionUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionUtil.m; sourceTree = "<group>"; };
+		3BC13B5E1CBE30E300D795FC /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		3BC13B5F1CBE30E300D795FC /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
+		3BC13B601CBE30E300D795FC /* BIFAppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIFAppConfig.h; sourceTree = "<group>"; };
+		3BC13B611CBE30E300D795FC /* BIFAppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIFAppConfig.m; sourceTree = "<group>"; };
+		3BC13B621CBE30E300D795FC /* BIFFileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIFFileHandler.h; sourceTree = "<group>"; };
+		3BC13B631CBE30E300D795FC /* BIFFileHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIFFileHandler.m; sourceTree = "<group>"; };
+		3BC13B641CBE30E300D795FC /* BIFKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIFKeychain.h; sourceTree = "<group>"; };
+		3BC13B651CBE30E300D795FC /* BIFKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIFKeychain.m; sourceTree = "<group>"; };
+		3BC13B661CBE30E300D795FC /* BIFLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIFLocation.h; sourceTree = "<group>"; };
+		3BC13B671CBE30E300D795FC /* BIFLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIFLocation.m; sourceTree = "<group>"; };
+		3BC13B681CBE30E300D795FC /* BIFLogConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIFLogConfig.h; sourceTree = "<group>"; };
+		3BC13B691CBE30E300D795FC /* BIFLogConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIFLogConfig.m; sourceTree = "<group>"; };
+		3BC13B6A1CBE30E300D795FC /* BIFLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIFLogger.h; sourceTree = "<group>"; };
+		3BC13B6B1CBE30E300D795FC /* BIFLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIFLogger.m; sourceTree = "<group>"; };
+		3BC13B6C1CBE30E300D795FC /* BIFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIFModel.h; sourceTree = "<group>"; };
+		3BC13B6D1CBE30E300D795FC /* BIFModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIFModel.m; sourceTree = "<group>"; };
+		3BC13B6E1CBE30E300D795FC /* BIFNetworkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIFNetworkConfig.h; sourceTree = "<group>"; };
+		3BC13B6F1CBE30E300D795FC /* BIFObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIFObject.h; sourceTree = "<group>"; };
+		3BC13B701CBE30E300D795FC /* BIFObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIFObject.m; sourceTree = "<group>"; };
+		3BC13B711CBE30E300D795FC /* BIFSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIFSingleton.h; sourceTree = "<group>"; };
+		3BC13B721CBE30E300D795FC /* BIFSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIFSingleton.m; sourceTree = "<group>"; };
+		3BC13B731CBE30E300D795FC /* BIFUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIFUUID.h; sourceTree = "<group>"; };
+		3BC13B741CBE30E300D795FC /* BIFUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIFUUID.m; sourceTree = "<group>"; };
+		3BC13B751CBE30E300D795FC /* CFLMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFLMacros.h; sourceTree = "<group>"; };
+		3BC13B761CBE30E300D795FC /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		3BC13B771CBE30E300D795FC /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
+		3BC13B781CBE30E300D795FC /* NetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequest.h; sourceTree = "<group>"; };
+		3BC13B791CBE30E300D795FC /* NetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkRequest.m; sourceTree = "<group>"; };
+		3BC13B7A1CBE30E300D795FC /* NSObject+BIFNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BIFNetwork.h"; sourceTree = "<group>"; };
+		3BC13B7B1CBE30E300D795FC /* NSObject+BIFNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BIFNetwork.m"; sourceTree = "<group>"; };
+		3BC13B7C1CBE30E300D795FC /* NSString+BIFNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BIFNetwork.h"; sourceTree = "<group>"; };
+		3BC13B7D1CBE30E300D795FC /* NSString+BIFNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BIFNetwork.m"; sourceTree = "<group>"; };
+		3BC13B7E1CBE30E300D795FC /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		3BC13B7F1CBE30E300D795FC /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		3BC13B801CBE30E300D795FC /* UIDevice+CFL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+CFL.h"; sourceTree = "<group>"; };
+		3BC13B811CBE30E300D795FC /* UIDevice+CFL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+CFL.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3BC13B4E1CBE30C600D795FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BC13B481CBE30C600D795FC = {
+			isa = PBXGroup;
+			children = (
+				3BC13B531CBE30C600D795FC /* ActionUtil */,
+				3BC13B521CBE30C600D795FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3BC13B521CBE30C600D795FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BC13B511CBE30C600D795FC /* libActionUtil.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BC13B531CBE30C600D795FC /* ActionUtil */ = {
+			isa = PBXGroup;
+			children = (
+				3BC13B5D1CBE30E300D795FC /* libs */,
+				3BC13B541CBE30C600D795FC /* ActionUtil.h */,
+				3BC13B561CBE30C600D795FC /* ActionUtil.m */,
+			);
+			path = ActionUtil;
+			sourceTree = "<group>";
+		};
+		3BC13B5D1CBE30E300D795FC /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				3BC13B5E1CBE30E300D795FC /* App.h */,
+				3BC13B5F1CBE30E300D795FC /* App.m */,
+				3BC13B601CBE30E300D795FC /* BIFAppConfig.h */,
+				3BC13B611CBE30E300D795FC /* BIFAppConfig.m */,
+				3BC13B621CBE30E300D795FC /* BIFFileHandler.h */,
+				3BC13B631CBE30E300D795FC /* BIFFileHandler.m */,
+				3BC13B641CBE30E300D795FC /* BIFKeychain.h */,
+				3BC13B651CBE30E300D795FC /* BIFKeychain.m */,
+				3BC13B661CBE30E300D795FC /* BIFLocation.h */,
+				3BC13B671CBE30E300D795FC /* BIFLocation.m */,
+				3BC13B681CBE30E300D795FC /* BIFLogConfig.h */,
+				3BC13B691CBE30E300D795FC /* BIFLogConfig.m */,
+				3BC13B6A1CBE30E300D795FC /* BIFLogger.h */,
+				3BC13B6B1CBE30E300D795FC /* BIFLogger.m */,
+				3BC13B6C1CBE30E300D795FC /* BIFModel.h */,
+				3BC13B6D1CBE30E300D795FC /* BIFModel.m */,
+				3BC13B6E1CBE30E300D795FC /* BIFNetworkConfig.h */,
+				3BC13B6F1CBE30E300D795FC /* BIFObject.h */,
+				3BC13B701CBE30E300D795FC /* BIFObject.m */,
+				3BC13B711CBE30E300D795FC /* BIFSingleton.h */,
+				3BC13B721CBE30E300D795FC /* BIFSingleton.m */,
+				3BC13B731CBE30E300D795FC /* BIFUUID.h */,
+				3BC13B741CBE30E300D795FC /* BIFUUID.m */,
+				3BC13B751CBE30E300D795FC /* CFLMacros.h */,
+				3BC13B761CBE30E300D795FC /* Device.h */,
+				3BC13B771CBE30E300D795FC /* Device.m */,
+				3BC13B781CBE30E300D795FC /* NetworkRequest.h */,
+				3BC13B791CBE30E300D795FC /* NetworkRequest.m */,
+				3BC13B7A1CBE30E300D795FC /* NSObject+BIFNetwork.h */,
+				3BC13B7B1CBE30E300D795FC /* NSObject+BIFNetwork.m */,
+				3BC13B7C1CBE30E300D795FC /* NSString+BIFNetwork.h */,
+				3BC13B7D1CBE30E300D795FC /* NSString+BIFNetwork.m */,
+				3BC13B7E1CBE30E300D795FC /* NSString+MD5.h */,
+				3BC13B7F1CBE30E300D795FC /* NSString+MD5.m */,
+				3BC13B801CBE30E300D795FC /* UIDevice+CFL.h */,
+				3BC13B811CBE30E300D795FC /* UIDevice+CFL.m */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3BC13B501CBE30C600D795FC /* ActionUtil */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BC13B5A1CBE30C600D795FC /* Build configuration list for PBXNativeTarget "ActionUtil" */;
+			buildPhases = (
+				3BC13B4D1CBE30C600D795FC /* Sources */,
+				3BC13B4E1CBE30C600D795FC /* Frameworks */,
+				3BC13B4F1CBE30C600D795FC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ActionUtil;
+			productName = ActionUtil;
+			productReference = 3BC13B511CBE30C600D795FC /* libActionUtil.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3BC13B491CBE30C600D795FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Frontend Team";
+				TargetAttributes = {
+					3BC13B501CBE30C600D795FC = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 3BC13B4C1CBE30C600D795FC /* Build configuration list for PBXProject "ActionUtil" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3BC13B481CBE30C600D795FC;
+			productRefGroup = 3BC13B521CBE30C600D795FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3BC13B501CBE30C600D795FC /* ActionUtil */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3BC13B4D1CBE30C600D795FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BC13B571CBE30C600D795FC /* ActionUtil.m in Sources */,
+				3BC13B921CBE30E300D795FC /* UIDevice+CFL.m in Sources */,
+				3BC13B8B1CBE30E300D795FC /* BIFSingleton.m in Sources */,
+				3BC13B851CBE30E300D795FC /* BIFKeychain.m in Sources */,
+				3BC13B861CBE30E300D795FC /* BIFLocation.m in Sources */,
+				3BC13B911CBE30E300D795FC /* NSString+MD5.m in Sources */,
+				3BC13B8E1CBE30E300D795FC /* NetworkRequest.m in Sources */,
+				3BC13B821CBE30E300D795FC /* App.m in Sources */,
+				3BC13B891CBE30E300D795FC /* BIFModel.m in Sources */,
+				3BC13B841CBE30E300D795FC /* BIFFileHandler.m in Sources */,
+				3BC13B8A1CBE30E300D795FC /* BIFObject.m in Sources */,
+				3BC13B8C1CBE30E300D795FC /* BIFUUID.m in Sources */,
+				3BC13B8F1CBE30E300D795FC /* NSObject+BIFNetwork.m in Sources */,
+				3BC13B831CBE30E300D795FC /* BIFAppConfig.m in Sources */,
+				3BC13B8D1CBE30E300D795FC /* Device.m in Sources */,
+				3BC13B871CBE30E300D795FC /* BIFLogConfig.m in Sources */,
+				3BC13B901CBE30E300D795FC /* NSString+BIFNetwork.m in Sources */,
+				3BC13B881CBE30E300D795FC /* BIFLogger.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3BC13B581CBE30C600D795FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3BC13B591CBE30C600D795FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3BC13B5B1CBE30C600D795FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../node_modules/react-native/React/**";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3BC13B5C1CBE30C600D795FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../node_modules/react-native/React/**";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3BC13B4C1CBE30C600D795FC /* Build configuration list for PBXProject "ActionUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BC13B581CBE30C600D795FC /* Debug */,
+				3BC13B591CBE30C600D795FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BC13B5A1CBE30C600D795FC /* Build configuration list for PBXNativeTarget "ActionUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BC13B5B1CBE30C600D795FC /* Debug */,
+				3BC13B5C1CBE30C600D795FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3BC13B491CBE30C600D795FC /* Project object */;
+}
