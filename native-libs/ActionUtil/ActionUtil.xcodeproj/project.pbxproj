@@ -327,7 +327,7 @@
 		3BC13B5B1CBE30C600D795FC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../node_modules/react-native/React/**";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../node_modules/react-native/React/**";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -337,7 +337,7 @@
 		3BC13B5C1CBE30C600D795FC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../node_modules/react-native/React/**";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../../node_modules/react-native/React/**";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
