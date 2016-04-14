@@ -39,7 +39,7 @@ static NSString *_ClientId = @"";
 {
     GeTui *geTui = [rootView.bridge moduleForClass:[GeTui class]];
     // GeTuiManager *geTuiManager = rootView.bridge.modules[RCTBridgeModuleNameForClass([GeTuiManager class])];
-    [geTui.bridge.eventDispatcher sendAppEventWithName:@"notify"
+    [geTui.bridge.eventDispatcher sendAppEventWithName:@"geTuiDataReceived"
                                                          body:payloadMsg];
 }
 

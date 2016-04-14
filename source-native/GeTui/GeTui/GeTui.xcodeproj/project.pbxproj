@@ -220,6 +220,7 @@
 					"$(SRCROOT)/../react-native/React/**",
 					"$(SRCROOT)/../../../node_modules/react-native/React/**",
 					"$(SRCROOT)/../../React/**",
+					"$(SRCROOT)/../../../../../node_modules/react-native/React/**",
 					"~/Documents/FacebookSDK/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -237,6 +238,7 @@
 					"$(SRCROOT)/../react-native/React/**",
 					"$(SRCROOT)/../../../node_modules/react-native/React/**",
 					"$(SRCROOT)/../../React/**",
+					"$(SRCROOT)/../../../../../node_modules/react-native/React/**",
 					"~/Documents/FacebookSDK/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
