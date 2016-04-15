@@ -21,4 +21,25 @@ RCT_EXPORT_METHOD(setActionWithExtend:(NSString *)action extend:(NSDictionary *)
     [[BIFLogger shared] logWithActionCode:action note:extend];
 }
 
+RCT_EXPORT_METHOD(setUsage:(NSDictionary *)usage) {
+    [[BIFLogger shared] setUsage:usage];
+}
+
+RCT_EXPORT_METHOD(setUid:(NSString *)uid) {
+    [[BIFLogger shared] setUid:uid];
+}
+RCT_EXPORT_METHOD(deleteUid {
+    [[BIFLogger shared] setUid:@""];
+}
+RCT_EXPORT_METHOD(setCcid:(NSString *)ccid) {
+    [[BIFLogger shared] setCcid:ccid];
+}
+RCT_EXPORT_METHOD(setGcid:(NSString *)gcid) {
+    [[BIFLogger shared] setGcid:gcid];
+}
+RCT_EXPORT_METHOD(setGeo:(NSString *)geo) {
+    NSArray *rs = [geo componentsSeparatedByString:@"-"];
+    [[BIFLogger shared] setLat:rs[0]];
+    [[BIFLogger shared] setLng:rs[1]];
+}
 @end

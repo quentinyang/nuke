@@ -73,6 +73,37 @@
     
 }
 
+- (void)setUsage:(NSDictionary *)usage   //(NSString *)uid ccid(NString *)ccid gcid(NSString *)gcid lat(NSString *)lat lng(NSString *)lng
+{
+    BIFAppConfig *usageConfig = [BIFAppConfig shared];
+   
+    usageConfig.userId = [usage objectForKey:@"uid"];
+    usageConfig.ccid =[usage objectForKey:@"ccid"];
+    usageConfig.gcid = [usage objectForKey:@"gcid"];
+    usageConfig.lat = [usage objectForKey:@"lat"];
+    usageConfig.lng = [usage objectForKey:@"lng"];
+}
+- (void)setUid:(NSString *)uid
+{
+    [BIFAppConfig shared].userId = uid;
+}
+- (void)setCcid:(NSString *)ccid
+{
+    [BIFAppConfig shared].ccid = ccid;
+}
+- (void)setGcid:(NSString *)gcid
+{
+    [BIFAppConfig shared].gcid = gcid;
+}
+- (void)setLat:(NSString *)lat
+{
+    [BIFAppConfig shared].lat = lat;
+}
+- (void)setLng:(NSString *)lng
+{
+    [BIFAppConfig shared].lng = lng;
+}
+
 + (NSArray *)necessaryPreviousAwakeClasses
 {
     return @[@"BIFAppConfig"];

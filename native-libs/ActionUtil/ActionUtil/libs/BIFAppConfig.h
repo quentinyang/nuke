@@ -61,13 +61,12 @@
 /**
  *  定位获取的经度
  */
-@property (nonatomic, readonly) NSString *lng;
+@property (nonatomic, strong) NSString *lng;
 
 /**
  *  定位获取的纬度
  */
-@property (nonatomic, readonly) NSString *lat;
-
+@property (nonatomic, strong) NSString *lat;
 /**
  *  本机的ip
  */

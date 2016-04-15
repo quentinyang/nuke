@@ -23,8 +23,8 @@
 @property (nonatomic, strong) NSString *appVerSion;
 @property (nonatomic, strong) NSString *chanalId;
 
-@property (nonatomic, strong) NSString *lng;
-@property (nonatomic, strong) NSString *lat;
+//@property (nonatomic, strong) NSString *lng;
+//@property (nonatomic, strong) NSString *lat;
 
 @end
 
@@ -314,6 +314,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:self.networkChangedNotification object:nil];
 }
 
+/*
 #pragma mark - location
 
 - (void)didReceiveLocationStatus:(NSNotification *)notification
@@ -322,6 +323,6 @@
     
     self.lng = [NSString stringWithFormat:@"%f", location.location.coordinate.longitude];
     self.lat = [NSString stringWithFormat:@"%f", location.location.coordinate.latitude];
-}
+}*/
 
 @end
