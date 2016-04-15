@@ -28,7 +28,7 @@ RCT_EXPORT_METHOD(setUsage:(NSDictionary *)usage) {
 RCT_EXPORT_METHOD(setUid:(NSString *)uid) {
     [[BIFLogger shared] setUid:uid];
 }
-RCT_EXPORT_METHOD(deleteUid {
+RCT_EXPORT_METHOD(deleteUid) {
     [[BIFLogger shared] setUid:@""];
 }
 RCT_EXPORT_METHOD(setCcid:(NSString *)ccid) {
