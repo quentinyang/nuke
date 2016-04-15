@@ -16,6 +16,6 @@
 
 +(instancetype)sharedInstance;
 
--(void)handleRemoteNotificationReceived:(NSString *)payloadMsg withRoot:(RCTRootView *) rootView;
+-(void)handleRemoteNotificationReceived:(NSString *)eventName andPayloadMsg:(NSString *)payloadMsg withRoot:(RCTRootView *) rootView;
 
 @end

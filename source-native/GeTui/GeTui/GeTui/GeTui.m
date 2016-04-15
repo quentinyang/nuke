@@ -35,12 +35,11 @@ static NSString *_ClientId = @"";
     return self;
 }
 
-- (void)handleRemoteNotificationReceived:(NSString *)payloadMsg withRoot:(RCTRootView *)rootView
+- (void)handleRemoteNotificationReceived:(NSString *)eventName andPayloadMsg:(NSString *)payloadMsg withRoot:(RCTRootView *)rootView
 {
     GeTui *geTui = [rootView.bridge moduleForClass:[GeTui class]];
     // GeTuiManager *geTuiManager = rootView.bridge.modules[RCTBridgeModuleNameForClass([GeTuiManager class])];
-    [geTui.bridge.eventDispatcher sendAppEventWithName:@"geTuiDataReceived"
-                                                         body:payloadMsg];
+    [geTui.bridge.eventDispatcher sendAppEventWithName:eventName body:payloadMsg];
 }
 
 RCT_EXPORT_MODULE();
