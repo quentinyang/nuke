@@ -15,7 +15,7 @@
 /**
  * 线上action log 的最大发送条数（默认）
  */
-#define ONLINE_MAX_LOGS_SEND 30
+#define ONLINE_MAX_LOGS_SEND 15
 
 /**
  * 线下action log 的最大发送条数（默认）
