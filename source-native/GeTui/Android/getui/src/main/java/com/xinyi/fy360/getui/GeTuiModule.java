@@ -56,7 +56,7 @@ public class GeTuiModule extends ReactContextBaseJavaModule {
         responseSenderBlock.invoke(clientId);
     }
 
-    public void handleRemoteNotificationReceived(String eventName, @Nullable WritableMap params) {
+    public void handleRemoteNotificationReceived(String eventName, String params) {
         this.reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
     }
 }

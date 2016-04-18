@@ -42,7 +42,4 @@ public class GeTuiManager implements ReactPackage {
             ReactApplicationContext reactContext) {
         return Collections.emptyList();
     }
-
-
-
 }
