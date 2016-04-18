@@ -40,7 +40,7 @@ public class GeTuiModule extends ReactContextBaseJavaModule {
         return "GeTui";
     }
 
-    public static GeTuiModule getInstance(ReactApplicationContext reactContext) {
+    public static synchronized GeTuiModule getInstance(ReactApplicationContext reactContext) {
         if (single == null) {
             single = new GeTuiModule(reactContext);
         }
