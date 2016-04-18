@@ -53,7 +53,7 @@
     NSString *ip = @"http://s.angejia.com/";
 #endif
     
-    NSString *host = [ip stringByAppendingString:@"/uba?payload=app_action"];
+    NSString *host = [ip stringByAppendingString:@"uba?payload=app_action"];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:host]];
     [request setHTTPMethod:@"POST"];
