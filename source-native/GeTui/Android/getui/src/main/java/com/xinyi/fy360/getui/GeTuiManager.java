@@ -19,14 +19,14 @@ import com.facebook.react.uimanager.ViewManager;
 import com.facebook.react.bridge.JavaScriptModule;
 
 public class GeTuiManager implements ReactPackage {
-    public static GeTuiModule module;
+    public static GeTuiModule module = null;
 
     @Override
     public List<NativeModule> createNativeModules(
             ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
 
-        module = GeTuiModule.getInstance(reactContext);
+        module = new GeTuiModule(reactContext);
         modules.add(module);
 
         return modules;

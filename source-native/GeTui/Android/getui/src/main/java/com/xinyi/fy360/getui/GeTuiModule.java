@@ -8,6 +8,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.provider.Settings.Secure;
+import android.util.Log;
 
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -40,12 +41,13 @@ public class GeTuiModule extends ReactContextBaseJavaModule {
         return "GeTui";
     }
 
-    public static synchronized GeTuiModule getInstance(ReactApplicationContext reactContext) {
-        if (single == null) {
-            single = new GeTuiModule(reactContext);
-        }
-        return single;
-    }
+//    public static synchronized GeTuiModule getInstance(ReactApplicationContext reactContext) {
+//        if (single == null) {
+//            Log.d("synchronized", "getInstance: synchronized");
+//            single = new GeTuiModule(reactContext);
+//        }
+//        return single;
+//    }
 
     public void setClientId(String clientId) {
         this.clientId = clientId;
@@ -57,6 +59,7 @@ public class GeTuiModule extends ReactContextBaseJavaModule {
     }
 
     public void handleRemoteNotificationReceived(String eventName, String params) {
+        Log.d("handle", "handleRemoteNotificationReceived...");
         this.reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
     }
 }
