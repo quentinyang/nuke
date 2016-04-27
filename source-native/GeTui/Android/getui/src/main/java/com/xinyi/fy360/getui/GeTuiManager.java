@@ -7,7 +7,6 @@ package com.xinyi.fy360.getui;
 /**
  * Created by zhouxiaojian on 16/4/13.
  */
-import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

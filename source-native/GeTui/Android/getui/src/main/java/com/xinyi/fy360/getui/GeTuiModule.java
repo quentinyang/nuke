@@ -3,27 +3,13 @@ package com.xinyi.fy360.getui;
 /**
  * Created by zhouxiaojian on 16/4/13.
  */
-import android.bluetooth.BluetoothAdapter;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import android.provider.Settings.Secure;
 import android.util.Log;
 
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.ReactContext;
-import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
-
-
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-
-import javax.annotation.Nullable;
 
 public class GeTuiModule extends ReactContextBaseJavaModule {
     ReactApplicationContext reactContext;
@@ -41,14 +27,6 @@ public class GeTuiModule extends ReactContextBaseJavaModule {
         return "GeTui";
     }
 
-//    public static synchronized GeTuiModule getInstance(ReactApplicationContext reactContext) {
-//        if (single == null) {
-//            Log.d("synchronized", "getInstance: synchronized");
-//            single = new GeTuiModule(reactContext);
-//        }
-//        return single;
-//    }
-
     public void setClientId(String clientId) {
         this.clientId = clientId;
     }
@@ -60,6 +38,11 @@ public class GeTuiModule extends ReactContextBaseJavaModule {
 
     public void handleRemoteNotificationReceived(String eventName, String params) {
         Log.d("handle", "handleRemoteNotificationReceived...");
-        this.reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
+
+        try {
+            this.reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        }
     }
 }
