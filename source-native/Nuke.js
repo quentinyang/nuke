@@ -32,7 +32,10 @@ let Nuke = {
     TouchableWithoutFeedback: require('./Touchable').TouchableWithoutFeedback,
     Button: require('./Button'),
     Linking: require('./Linking'),
-    Modal: require('./Modal/Modal')
+    Modal: require('./Modal/Modal'),
+
+    //custom module
+    DeviceId: require('../native-libs/DeviceID/deviceId')
 };
 
 module.exports = Nuke;
