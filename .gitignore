@@ -1,5 +1,10 @@
+.DS_Store
 node_modules
 lib/
 dist/
 .idea/
 .nukerc.json
+
+# XCode
+*.xcuserstate
+xcuserdata
