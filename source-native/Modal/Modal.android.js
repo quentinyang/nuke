@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { PropTypes } from 'react-native';
+import React, {PropTypes} from 'react';
 import Portal from 'react-native/Libraries/Portal/Portal.js';
 import InteractionManager from 'react-native/Libraries/Interaction/InteractionManager'
 import Component from '../Component'

@@ -1,4 +1,5 @@
-import React, { PropTypes, StyleSheet, Text, TouchableHighlight } from 'react-native'
+import React, {PropTypes} from 'react';
+import {StyleSheet, Text, TouchableHighlight} from 'react-native';
 import Component from './Component'
 /*import StyleSheetPropType from 'StyleSheetPropType';
 import ViewStylePropTypes from 'ViewStylePropTypes';
