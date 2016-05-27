@@ -1,9 +1,8 @@
-import React from 'react';
-import {View} from 'react-native';
+import React, {Component} from 'react';
 
-let PureRenderMixin = require('react-addons-pure-render-mixin');
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-class Component extends React.Component {
+class NukeComponent extends Component {
     constructor(props) {
         super(props);
     }
@@ -13,4 +12,5 @@ class Component extends React.Component {
     }
 }
 
-module.exports = Component;
+module.exports = NukeComponent;
+

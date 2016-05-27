@@ -1,41 +1,56 @@
 let Nuke = {
-    Text: require('./Text.js'),
-    View: require('./View.js'),
-    Switch: require('./Switch.js'),
-    Image: require('./Image.js'),
-    MapView: require('./MapView.js'),
-    Picker: require('./Picker.js'),
-    Alert: require('./Alert.js'),
-    RefreshControl: require('./RefreshControl.js'),
-    Navigator: require('./Navigator.js'),
-    ListView: require('./ListView.js'),
-    Component: require('./Component.js'),
     ActivityIndicator: require('./ActivityIndicator/ActivityIndicator'),
-    React: require('./React.js'),
-    Dimensions: require('./CommonApi').Dimensions,
-    PixelRatio: require('./CommonApi').PixelRatio,
-    StyleSheet: require('./CommonApi').StyleSheet,
-    Platform: require('./CommonApi').Platform,
-    BackAndroid: require('./CommonApi').BackAndroid,
-    InteractionManager: require('./CommonApi').InteractionManager,
+    Alert: require('./Alert.js'),
     AppRegistry: require('./CommonApi').AppRegistry,
+
+    Button: require('./Button'),
+    BackAndroid: require('./CommonApi').BackAndroid,
+
+    Component: require('./Component.js'),
+
+    
+    // Custom Module: DeviceId
+    DeviceId: require('../native-libs/DeviceID/deviceId'),
+
+    Dimensions: require('./CommonApi').Dimensions,
+
+    Image: require('./Image.js'),
+    InteractionManager: require('./CommonApi').InteractionManager,
+
+    ListView: require('./ListView.js'),
+    Linking: require('./Linking'),
+
+    MapView: require('./MapView.js'),
+    Modal: require('./Modal/Modal'),
+
+
     NativeModules: require('./CommonApi').NativeModules,
-    TextInput: require('./TextInput'),
-    WebView: require('./WebView'),
+    Navigator: require('./Navigator.js'),
+
+    Progress: require('./Progress/Progress'),
+    Picker: require('./Picker.js'),
+    PixelRatio: require('./CommonApi').PixelRatio,
+    Platform: require('./CommonApi').Platform,
+
+    React: require('./React.js'),
+    RefreshControl: require('./RefreshControl.js'),
+
     ScrollView: require('./ScrollView'),
     StatusBar: require('./StatusBar'),
-    Progress: require('./Progress/Progress'),
-    TabBar: require('./TabBar/TabBar'),
+    StyleSheet: require('./CommonApi').StyleSheet,
+    Switch: require('./Switch.js'),
 
+    TabBar: require('./TabBar/TabBar'),
+    Text: require('./Text.js'),
+    TextInput: require('./TextInput'),
     TouchableHighlight: require('./Touchable').TouchableHighlight,
     TouchableOpacity: require('./Touchable').TouchableOpacity,
     TouchableWithoutFeedback: require('./Touchable').TouchableWithoutFeedback,
-    Button: require('./Button'),
-    Linking: require('./Linking'),
-    Modal: require('./Modal/Modal'),
 
-    //custom module
-    DeviceId: require('../native-libs/DeviceID/deviceId')
+    View: require('./View.js'),
+    WebView: require('./WebView'),
+
+    
 };
 
 module.exports = Nuke;
