@@ -21,7 +21,7 @@ let Nuke = {
     Linking: require('./Linking'),
 
     MapView: require('./MapView.js'),
-    Modal: require('./Modal/Modal'),
+    Modal: require('./Modal'),
 
 
     NativeModules: require('./CommonApi').NativeModules,
