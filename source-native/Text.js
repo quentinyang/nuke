@@ -8,10 +8,10 @@ class TextComponent extends Component {
     }
 
     render() {
-        let {children, ...props} = this.props;
+        let {children, style, ...props} = this.props;
 
         return (
-            <Text allowFontScaling={false} {...props}>
+            <Text allowFontScaling={false} style={[{fontFamily: 'Helvetica',fontSize: 16, color: '#3e3e3e'}, style]} {...props}>
             {children}
             </Text>
         )
