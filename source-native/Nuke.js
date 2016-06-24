@@ -50,7 +50,7 @@ let Nuke = {
     View: require('./View.js'),
     WebView: require('./WebView'),
 
-    
+    AppState: require('./AppState/AppState'),
 };
 
 module.exports = Nuke;
