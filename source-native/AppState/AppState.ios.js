@@ -1,3 +1,3 @@
 import {AppStateIOS} from 'react-native';
 
-module.exports = AppState;
+module.exports = AppStateIOS;
