@@ -8,7 +8,7 @@ let Nuke = {
 
     Component: require('./Component.js'),
 
-    
+
     // Custom Module: DeviceId
     DeviceId: require('../native-libs/DeviceID/deviceId'),
 
@@ -22,7 +22,6 @@ let Nuke = {
 
     MapView: require('./MapView.js'),
     Modal: require('./Modal'),
-
 
     NativeModules: require('./CommonApi').NativeModules,
     Navigator: require('./Navigator.js'),
@@ -51,6 +50,7 @@ let Nuke = {
     WebView: require('./WebView'),
 
     AppState: require('./AppState/AppState'),
+    NetInfo: require('./NetInfo'),
 };
 
 module.exports = Nuke;
