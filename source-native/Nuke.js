@@ -2,6 +2,7 @@ let Nuke = {
     ActivityIndicator: require('./ActivityIndicator/ActivityIndicator'),
     Alert: require('./Alert.js'),
     AppRegistry: require('./CommonApi').AppRegistry,
+    AppState: require('./AppState/AppState'),
 
     Button: require('./Button'),
     BackAndroid: require('./CommonApi').BackAndroid,
@@ -25,6 +26,7 @@ let Nuke = {
 
     NativeModules: require('./CommonApi').NativeModules,
     Navigator: require('./Navigator.js'),
+    NetInfo: require('./NetInfo'),
 
     Progress: require('./Progress/Progress'),
     Picker: require('./Picker.js'),
@@ -48,9 +50,6 @@ let Nuke = {
 
     View: require('./View.js'),
     WebView: require('./WebView'),
-
-    AppState: require('./AppState/AppState'),
-    NetInfo: require('./NetInfo'),
 };
 
 module.exports = Nuke;
