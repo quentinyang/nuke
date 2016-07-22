@@ -1,8 +1,8 @@
 let Nuke = {
-    ActivityIndicator: require('./ActivityIndicator/ActivityIndicator'),
+    ActivityIndicator: require('./ActivityIndicator'),
     Alert: require('./Alert.js'),
     AppRegistry: require('./CommonApi').AppRegistry,
-    AppState: require('./AppState/AppState'),
+    AppState: require('./AppState'),
 
     Button: require('./Button'),
     BackAndroid: require('./CommonApi').BackAndroid,
@@ -17,6 +17,8 @@ let Nuke = {
 
     Image: require('./Image.js'),
     InteractionManager: require('./CommonApi').InteractionManager,
+
+    KeyboardAvoidingView: require('./KeyboardAvoidingView'),
 
     ListView: require('./ListView.js'),
     Linking: require('./Linking'),
