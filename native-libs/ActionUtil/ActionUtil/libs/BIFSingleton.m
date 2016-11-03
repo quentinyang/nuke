@@ -14,6 +14,7 @@
 
 static NSMutableDictionary *singletonMap = nil;
 
+
 @interface BIFSingleton ()
 
 @end
@@ -43,9 +44,9 @@ static NSMutableDictionary *singletonMap = nil;
 {
     if (self = [super init]) {
         CFLLog(@"Singleton [%@] begin init....", [self class]);
-        for (NSString *className in [[self class] necessaryPreviousAwakeClasses]) {
-            [NSClassFromString(className) shared];
-        }
+//        for (NSString *className in [[self class] necessaryPreviousAwakeClasses]) {
+//            [NSClassFromString(className) shared];
+//        }
         [self awake];
         CFLLog(@"Singleton [%@] end init....", [self class]);
     }
