@@ -8,23 +8,31 @@ var fs = require('fs');
 var gbabel = require('gulp-babel');
 var gutil = require('gulp-util');
 
+var nukeconf = {};
+var copyDir = '/tmp/';
+var sourceDir = './source-native';
+
+try{
+    nukeconf = require('./.nukerc.json');
+    copyDir = nukeconf.rndir;
+    sourceDir = nukeconf.source;
+}catch(e) {
+    console.error('[Error] Please put your RN app dir in ./.nukerc.json. For example:\n{"rndir": "YOUR/RN/DIR/"}\n');
+    return;
+}
+
 var config = {
-    // cssui: {
-    //     src: './materialize',
-    //     dest: './dist'
-    // }, 
     component: {
-        src: './src',
+        src: sourceDir,
         dest: './lib'
     }
-
 };
 
 function buildTask() {
     function babelBundle () {
         return gbabel({
                 "presets": ['react', 'es2015'],
-                "plugins": ["transform-object-rest-spread"]
+                "plugins": ["transform-object-rest-spread", "transform-object-assign"]
             }).on('error',function(e){
                 gutil.log(gutil.colors.magenta(e.message), "\n", gutil.colors.magenta(e.codeFrame));
 
@@ -42,7 +50,14 @@ function cleanTask(cb, params) {
     return del([config.component.dest], cb);
 }
 
-gulp.task('build', buildTask);
+function hotcopy() {
+    return gulp.src('./**/*')
+    .pipe(gulp.dest(copyDir + 'node_modules/nuke'))
+}
+
+gulp.task('build', ['buildTask'], hotcopy);
+
+gulp.task('buildTask', buildTask);
 
 gulp.task('clean', cleanTask);
 
