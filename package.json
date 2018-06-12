@@ -1,5 +1,5 @@
 {
-  "name": "nuke",
+  "name": "xnuke",
   "version": "2.0.0",
   "description": "A repository for React Components, can be used by React JS and React Native",
   "main": "nuke.js",
@@ -11,11 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.corp.angejia.com:frontend/nuke.git"
+    "url": "git@github.com:quentinyang/nuke.git"
   },
   "author": "Quentin Yang",
   "license": "ISC",
-  "private": true,
+  "private": false,
   "devDependencies": {},
   "dependencies": {
     "babel-plugin-transform-object-assign": "^6.5.0",
